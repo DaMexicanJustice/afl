@@ -3,10 +3,9 @@ let channelName = 'aaron_';
 let url = 'https://api.twitch.tv/helix/users/follows?to_id=' + userID;
 
 fetch(url, {
-    headers: new Headers({
-        //'Access-Control-Allow-Origin': '*',
+    headers: {
         'Client-ID': '101846410'
-    })
+    }
 }) // Call the fetch function passing the url of the API as a parameter
 .then(function(res) {
     // Your code for handling the data you get from the API
