@@ -1,11 +1,10 @@
-let channelID = '101846410';
+let userID = '101846410';
 let channelName = 'aaron_';
-let url = 'https://api.twitch.tv/kraken/channels/' + channelID + '/follows';
+let url = 'https://api.twitch.tv/helix/users/follows?to_id=' + userID;
 
 fetch(url, {
-    method: 'GET',
     headers: new Headers({
-        'Access-Control-Allow-Origin': '*',
+        //'Access-Control-Allow-Origin': '*',
         'Client-ID': '101846410'
     })
 }) // Call the fetch function passing the url of the API as a parameter
