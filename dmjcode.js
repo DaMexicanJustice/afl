@@ -5,6 +5,7 @@ let url = 'https://api.twitch.tv/kraken/channels/' + channelID + '/follows';
 fetch(url, {
     method: 'GET',
     headers: new Headers({
+        'Access-Control-Allow-Origin': '*',
         'Client-ID': '101846410'
     })
 }) // Call the fetch function passing the url of the API as a parameter
