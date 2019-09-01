@@ -1,14 +1,8 @@
-let url = 'https://api.twitch.tv/helix/users/follows?to_id='
+let channelID = '101846410';
+let channelName = 'aaron_';
+let url = 'https://api.twitch.tv/kraken/channels/' + channelID + '/follows';
 
-let promise = fetch(url, {
-    method: 'GET',
-    
-    headers: {
-        ClientID: '101846410'
-    }
-});
-
-fetch(promise) // Call the fetch function passing the url of the API as a parameter
+fetch(url) // Call the fetch function passing the url of the API as a parameter
 .then(function(res) {
     // Your code for handling the data you get from the API
     console.log(res);
