@@ -1,3 +1,4 @@
+// Native fetch method
 // fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
 //     method: 'GET',
 //     hostname: [
@@ -27,6 +28,8 @@
 //     console.log(err);
 // });
 
+
+// jQuery method
 var settings = {
     "async": true,
     "crossDomain": true,
