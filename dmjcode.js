@@ -1,8 +1,4 @@
-let userID = '101846410';
-let channelName = 'aaron_';
-let url = 'https://api.twitch.tv/helix/users/follows?to_id=' + userID
-
-fetch(url, {
+fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
     headers: {
         'Client-ID': 'kokyco38mg96als9lyu4vu7hvlnge2'
     }
