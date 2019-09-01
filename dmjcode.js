@@ -1,3 +1,5 @@
+let refreshInterval = 5000; //Refresh in milis. 5000 = 5 seconds.
+
 // Native fetch method
 // fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
 //     method: 'GET',
@@ -30,7 +32,8 @@
 
 
 // jQuery method
-var settings = {
+function getUsersFollows() {
+  var settings = {
     "async": true,
     "crossDomain": true,
     "url": "https://api.twitch.tv/helix/users/follows?to_id=101846410",
@@ -52,3 +55,8 @@ var settings = {
     console.log(response.data);
     $('#follower').html(response.data[0].from_name);
   });
+}
+
+var interval = setInterval(function() {
+  getUsersFollows();
+}, 5000);
