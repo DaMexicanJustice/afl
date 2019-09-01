@@ -6,6 +6,7 @@ fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
 .then(function(res) {
     // Your code for handling the data you get from the API
     console.log(res);
+    console.log(res.data);
     document.getElementById('follower').innerHTML = "FETCHING";
 })
 .catch(function(err) {
