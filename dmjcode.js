@@ -9,9 +9,9 @@ fetch(url, {
 }) // Call the fetch function passing the url of the API as a parameter
 .then(function(res) {
     // Your code for handling the data you get from the API
-    console.log('Then: ', res);
+    console.log(res);
 })
 .catch(function(err) {
     // This is where you run code if the server returns any errors
-    console.log("Catch: ", err);
+    console.log(err);
 });
