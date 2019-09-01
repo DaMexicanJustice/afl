@@ -1,4 +1,5 @@
 fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
+    method: 'GET',
     headers: {
         'Client-ID': 'kokyco38mg96als9lyu4vu7hvlnge2'
     }
