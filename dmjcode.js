@@ -1,6 +1,6 @@
 let userID = '101846410';
 let channelName = 'aaron_';
-let url = 'https://api.twitch.tv/helix/users/follows?to_id=' + userID;
+let url = 'https://api.twitch.tv/helix/users/follows'
 
 fetch(url, {
     headers: {
