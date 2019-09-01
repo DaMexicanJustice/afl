@@ -41,13 +41,14 @@ var settings = {
       "Accept": "*/*",
     //   "Cache-Control": "no-cache",
     //   "Postman-Token": "7660d411-3de9-44b3-87ab-45389103d5a1,49878760-9137-41b9-b578-bfe7e9d28553",
-      "Host": "api.twitch.tv",
-      "Accept-Encoding": "gzip, deflate",
+    //   "Host": "api.twitch.tv",
+    //   "Accept-Encoding": "gzip, deflate",
     //   "Connection": "keep-alive",
     //   "cache-control": "no-cache"
     }
   }
   
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    console.log(response.data);
+    $('#follower').html(response.data[0].from_name);
   });
