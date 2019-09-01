@@ -12,11 +12,8 @@ fetch('https://api.twitch.tv/helix/users/follows?to_id=101846410', {
       ],
     headers: {
         'Client-ID': 'kokyco38mg96als9lyu4vu7hvlnge2',
-        'User-Agent': 'PostmanRuntime/7.16.3',
         'Accept': '*/*',
         'Host': 'api.twitch.tv',
-        'Accept-Encoding': 'gzip, deflate',
-        'Connection': 'keep-alive',
     }
 }) // Call the fetch function passing the url of the API as a parameter
 .then(function(res) {
