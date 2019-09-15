@@ -57,6 +57,12 @@ function getUsersFollows() {
   });
 }
 
+function authenticate() {
+  console.log("clicked");
+  window.location.replace('https://id.twitch.tv/oauth2/authorize?scope=channel:read:subscriptions&client_id=kokyco38mg96als9lyu4vu7hvlnge2&response_type=token&redirect_uri=https://damexicanjustice.github.io/afl/');
+}
+
+/*
 var interval = setInterval(function() {
   getUsersFollows();
-}, 5000);
+}, 5000); */
