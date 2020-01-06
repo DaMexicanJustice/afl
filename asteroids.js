@@ -68,7 +68,13 @@
     return el;}
     var requestAnimFrame=(function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(callback,element){window.setTimeout(callback,1000/60);};})();function delay(d,func,bound){return setTimeout(bind(bound,func),d);}
     var KickAss=new Class({initialize:function(options){if(options&&options.mySite){this.mySite=options.mySite;}
-    this.players=[];this.elements=[];this.weaponClass=Weapons[1].cannonClass;this.scrollPos=new Vector(0,0);this.scrollSize=new Vector(0,0);this.windowSize={width:0,height:0};this.updateWindowInfo();this.bulletManager=new BulletManager(this);this.bulletManager.updateEnemyIndex();this.explosionManager=new ExplosionManager(this);this.ui=new UIManager(this);this.bombManager=new BombManager(this);this.menuManager=new MenuManager(this);this.menuManager.create();if(typeof StatisticsManager!=="undefined"){this.statisticsManager=new StatisticsManager(this);}
+    this.players=[];this.elements=[];this.weaponClass=Weapons[1].cannonClass;this.scrollPos=new Vector(0,0);this.scrollSize=new Vector(0,0);this.windowSize={width:0,height:0};this.updateWindowInfo();this.bulletManager=new BulletManager(this);this.bulletManager.updateEnemyIndex();this.explosionManager=new ExplosionManager(this);
+    
+    /* Menu 2
+    this.ui=new UIManager(this);
+    */
+    
+    this.bombManager=new BombManager(this);this.menuManager=new MenuManager(this);this.menuManager.create();if(typeof StatisticsManager!=="undefined"){this.statisticsManager=new StatisticsManager(this);}
     this.sessionManager=new SessionManager(this);this.lastUpdate=now();this.keyMap={};this.keydownEvent=bind(this,this.keydown);this.keyupEvent=bind(this,this.keyup);this.multiplier=10;if(this.isCampaign()){this.audioManager={explosion:new AudioManager(GameGlobals.path("static/sounds/game/explosion"),["mp3","ogg"]),shot:new AudioManager(GameGlobals.path("static/sounds/game/shot"),["mp3","ogg"])}}else{this.audioManager={};}
     if(window.KickAssStyle&&window.KickAssStyle==="white"){GameGlobals.bulletColor="white";}
     addEvent(document,'keydown',this.keydownEvent);addEvent(document,'keyup',this.keyupEvent);addEvent(document,'keypress',this.keydownEvent);},begin:function(){this.addPlayer();this.sessionManager.isPlaying=true;if(!GameGlobals.useAnimationFrame){this.loopTimer=window.setInterval(bind(this,this.loop),1000/GameGlobals.FPS);}
