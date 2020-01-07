@@ -70,16 +70,16 @@
     var KickAss=new Class({initialize:function(options){if(options&&options.mySite){this.mySite=options.mySite;}
     this.players=[];this.elements=[];this.weaponClass=Weapons[1].cannonClass;this.scrollPos=new Vector(0,0);this.scrollSize=new Vector(0,0);this.windowSize={width:0,height:0};this.updateWindowInfo();this.bulletManager=new BulletManager(this);this.bulletManager.updateEnemyIndex();this.explosionManager=new ExplosionManager(this);
     
-    /* Menu 2
+    
     this.ui=new UIManager(this);
-    */
+    
     
     this.bombManager=new BombManager(this);
 
-    /* Menu 1
+    
     this.menuManager=new MenuManager(this);
     this.menuManager.create();
-    */
+    
 
     if(typeof StatisticsManager!=="undefined"){this.statisticsManager=new StatisticsManager(this);}
     this.sessionManager=new SessionManager(this);this.lastUpdate=now();this.keyMap={};this.keydownEvent=bind(this,this.keydown);this.keyupEvent=bind(this,this.keyup);this.multiplier=10;if(this.isCampaign()){this.audioManager={explosion:new AudioManager(GameGlobals.path("static/sounds/game/explosion"),["mp3","ogg"]),shot:new AudioManager(GameGlobals.path("static/sounds/game/shot"),["mp3","ogg"])}}else{this.audioManager={};}
@@ -115,7 +115,7 @@
     if(isInitial&&getGlobalNamespace().KICKASSSHIP){return;}
     this.shipId=shipId;CORS.request(GameGlobals.path('designer/ship/'+shipId+'/construction.json'),{ship_id:shipId,is_initial:isInitial?'1':'0'},bind(this,function(data){this.game.updateShips(data.data,isInitial);try{window.focus();}catch(e){}}));if(!isInitial){this.parent.hideMenu();}},messageTypeChangeWeapon:function(weaponId,isInitial){this.game.changeWeaponById(weaponId,isInitial);},messageTypeSetMultiplier:function(mod){mod=parseInt(mod,10);if(isNaN(mod)||!mod){return;}
     this.game.multiplier=mod;},messageTypeNewRank:function(rank){this.game.newRank(rank);},messageTypePlayerMessage:function(message){this.game.ui.showMessage(message);},destroy:function(){this.game.unregisterElement(this.container);this.game.unregisterElement(this.iframe);window.removeEventListener("message",this.onMessage,false);this.container.parentNode.removeChild(this.container);}});
-    /* Menu 1
+    
     var MenuManager=new Class({initialize:function(game){this.game=game;this.numPoints=0;if(!getGlobalNamespace().KICKASS_INLINE_CSS){this.includeCSS(GameGlobals.path('css/menustyles.css'));}},generateDefaults:function(){for(var id in Weapons)if(Weapons.hasOwnProperty(id)){this.addWeapon(Weapons[id],id);}
     this.hideBombMenu();},create:function(){this.container=document.createElement('div');this.container.className='KICKASSELEMENT KICKASShidden '+(this.game.shouldShowMenu()?"":"KICKASSNOMENU");this.container.id='kickass-menu';if(this.game.shouldShowMenu()){this.container.style.bottom='-250px';this.container.style.display='none';}else{removeClass(this.container,"KICKASShidden");}
     getAppContainerElement().appendChild(this.container);var adHTML=this.game.shouldShowAd()?'<iframe style="background: transparent" src="'+GameGlobals.path('hello.html')+'" class="KICKASSELEMENT" id="kickass-hello-sunshine"></iframe>':"";this.container.innerHTML='<div id="kickass-howto-image" class="KICKASSELEMENT kickass-howto-invisible"></div>'+'<div id="kickass-pointstab" class="KICKASSELEMENT">'+
@@ -129,12 +129,11 @@
     this.game.ui.addPointsBubbleAt(pos,points);},includeCSS:function(file){var link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href=file;(document.head||document.body).appendChild(link);},sendMessageToMenu:function(fragment){if(this.menu){this.menu.sendMessage(fragment);}},addWeapon:function(weapon,id){var li=document.createElement('li');li.className='KICKASSELEMENT kickass-weapon-item';li.weapon=weapon;li.style.backgroundImage='url('+GameGlobals.path('css/gfx/kickass/weap-'+weapon.id+'.png')+')';li.innerHTML='<span class="KICKASSELEMENT">'+weapon.name+'</span>';this.weaponsList.appendChild(li);addEvent(li,'click',bind(this,function(e){stopEvent(e);this.changeWeapon(weapon);this.sendMessageToMenu("changeWeapon:!"+id);}));},changeWeapon:function(weapon){this.game.changeWeapon(weapon);},destroy:function(){var all=this.container.getElementsByTagName('*');for(var i=0;i<all.length;i++){this.game.unregisterElement(all[i]);}
     this.game.unregisterElement(this.container);if(this.menu){this.menu.destroy();}
     this.container.parentNode.removeChild(this.container);}});
-    */
-
-    /* Menu 2
+    
+    
     var UIManager=new Class({initialize:function(game){this.UNIQID=0;this.game=game;this.pointBubbles={};this.messages={};this.fx=new Fx();this.fx.addListener(this);},update:function(tdelta){this.fx.update();},set:function(key,value,delta){var type=key.split('-')[0];var id=key.split('-')[1];if(this.pointBubbles[id]){var bubble=this.pointBubbles[id];bubble.style.top=value[0]+'px';bubble.style.opacity=value[1];if(delta==1&&bubble.parentNode){bubble.parentNode.removeChild(bubble);delete this.pointBubbles[id];}}else if(this.messages[id]&&type=='messagedown'){var message=this.messages[id];message.style.top=value[0]+'px';if(delta==1){setTimeout(bind(this,function(){this.fx.add('messageup-'+id,{tweens:[[value[0],-100]],transition:Tween.Quadratic,duration:300});}),message.staytime||4000);}}else if(this.messages[id]&&type=='messageup'){var message=this.messages[id];message.style.top=value[0]+'px';if(delta==1){message.parentNode.removeChild(message);delete this.messages[id];}}},addPointsBubbleAt:function(pos,points){var id='bubble'+(this.UNIQID++);var y=this.game.scrollPos.y+pos.y;var bubble=newElement('span',{innerHTML:points,className:'KICKASSELEMENT',styles:{position:'absolute',font:"20px Arial",fontWeight:"bold",opacity:"1",color:"black",textShadow:"#fff 1px 1px 3px",top:y,zIndex:"10000000"}});bubble.style.left=pos.x-bubble.offsetWidth/2+'px';getAppContainerElement().appendChild(bubble);this.pointBubbles[id]=bubble;this.fx.add('bubble-'+id,{tweens:[[y,y-15],[1,0]]});},showMessage:function(html,staytime){staytime=staytime||false;var width=300;var id=this.UNIQID++;var message=newElement('div',{innerHTML:html,className:'KICKASSELEMENT',id:'kickass-message-'+id,styles:{position:'fixed',top:-100,left:'50%',marginLeft:-width/2,width:width,background:'#222',opacity:0.8,padding:'10px',color:'#fff',textAlign:'center',borderRadius:15,font:'20px Arial',fontWeight:'bold',zIndex:"10000000"}});message.staytime=staytime;getAppContainerElement().appendChild(message);var to=this.getLowestBubbleY();message.kickassto=to;this.fx.add('messagedown-'+id,{duration:300,tweens:[[-100,to]],transition:Tween.Quadratic});this.messages[id]=message;return message;},getLowestBubbleY:function(){var top=100;for(var id in this.messages)if(this.messages.hasOwnProperty(id))
     top=Math.max(this.messages[id].kickassto+this.messages[id].offsetHeight+10,top);return top;}});
-    */
+    
 
     var AudioManager=new Class({initialize:function(src,formats){this.src=src;this.formats=formats;channels=8;this.supportsAudio=(typeof document.createElement('audio').play)!='undefined';if(this.supportsAudio){this.numChannels=channels;this.channels=[];for(var i=0;i<this.numChannels;i++){this.channels.push({isPlaying:false,element:this.prepareElement(this.buildAudioElement())});}}},buildAudioElement:function(){var TYPES={"ogg":"audio/ogg","mp3":"audio/mpeg"}
     var audio=document.createElement("audio");for(var i=0,format;format=this.formats[i];i++){var source=document.createElement("source");source.src=this.src+"."+format;source.type=TYPES[format];audio.appendChild(source);}
