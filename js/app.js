@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    authenticate();
+});
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBMG-wOi-M43KII-za6C8fAO56Jd_Wphc0",
@@ -23,6 +27,7 @@ function signInGoogle() {
         var user = result.user;
         // ...
         console.log("Reached", token, user);
+        window.location = "https://damexicanjustice.github.io/afl/dashboard.html";
       }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -33,4 +38,19 @@ function signInGoogle() {
         var credential = error.credential;
         // ...
       });
+}
+
+function authenticate() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+        } else {
+          window.location = "https://damexicanjustice.github.io/afl/retro.html";
+        }
+      });
+}
+
+function signOut() {
+    firebase.auth().signOut();
+    authenticate();
 }
