@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-buttons.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" media="screen" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="js/asteroidsUIText.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
@@ -110,6 +109,7 @@
 				<li><a href="#home_portfolio">Udvalg</a></li>
 				<li class="padd disabled"><a href="#"><img src="images/comingsoon.png"></a></li>
 				<li><a href="#home_contact">Kontakt</a></li>
+				<li><a href="javascript:signInGoogle()">Dashboard</a></li>
 			</ul>
 			<div class="clr"></div>
 		</div><!-- end div #menu -->
@@ -316,7 +316,7 @@
 					<li data-category="sega"> <img src="images/sega_mastersystem.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_sega" title="Sega Mastersystem">&nbsp;</a></span>
 						<p><a href="http://graphicriver.net/item/simple-pro-powerpoint-interactive-template/1261641?ref=pacovitiello1">Sega Mastersystem</a></p>
 					</li>
-					<li class="last_li" data-category="nintendo"> <img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_nintendo" title="Nintendo 64" >&nbsp;</a></span>
+					<li class="last_li" data-category="nintendo"> <img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_nintendo" title="N64" >&nbsp;</a></span>
 						<p><a href="http://vimeo.com/pasqualevitiello" >Nintendo 64</a></p>
 					</li>					
 				</ul>
@@ -474,19 +474,22 @@ $(document).ready(function(){
 	});
 });
 </script>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-28957834-1']);
-  _gaq.push(['_gat._anonymizeIp']);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
 
-</script>
+
+
+
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+
 </body>
 </html>
