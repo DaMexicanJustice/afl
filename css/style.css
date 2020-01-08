@@ -12,10 +12,20 @@
   }
 
 #asteroids:hover {
-	-webkit-transform: scale(1.6);
-        -ms-transform: scale(1.6);
-		transform: scale(1.6);
+	-webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+		transform: scale(1.4);
 		transition: 1s;
+}
+
+#asteroids:hover .btnText {
+	visibility: visible;
+}
+
+   .btnText {
+	text-align: center;
+	color: white;
+	visibility: hidden;
 }
 
   .btn{/*dent around button*/
@@ -53,12 +63,18 @@
     border-bottom: solid 2px #d8d8d8;
 }
 
+.disabled {
+    pointer-events:none; 
+    opacity:0.6;        
+}
+
 
 
 /* Pirate */
 body {
 	font-size:12px;
 	font-family:Arial, Helvetica, sans-serif;
+	background-color: black;
 }
 * {
 	margin:0px;
@@ -118,7 +134,7 @@ fieldset {
 	height:130px;
 	background:url(../images/body_bg.png) repeat-x;
 	/*background-color: #663399;
-	outline: 1px dashed #000000;
+	outline: 1px vshed #000000;
 	outline-offset: 0px;
 	*/
 	padding-top: 10px;
@@ -589,6 +605,19 @@ fieldset {
 }
 #portfolio_listing ul li span a.icon_vimeo {
 	background:url(../images/th_icon_film.png) 0px 0px no-repeat;
+	margin-top:4px;
+}
+#portfolio_listing ul li span a.icon_ps {
+	background:url(../images/Sony-Playstation-icon.png) 0px 0px no-repeat;
+}
+#portfolio_listing ul li span a.icon_nintendo {
+	background:url(../images/nintendo-icon.png) 0px 0px no-repeat;
+}
+#portfolio_listing ul li span a.icon_xbox {
+	background:url(../images/Xbox_icon.png) 0px 0px no-repeat;
+}
+#portfolio_listing ul li span a.icon_sega {
+	background:url(../images/sega_icon.png) 0px 0px no-repeat;
 	margin-top:4px;
 }
 #portfolio_listing ul li span a:hover {
@@ -1175,7 +1204,7 @@ div.home_blog_post_txt.full_width a {
 	text-align: center;
 }
 #social_links {
-	width:810px;
+	width: 57%;
 	float:right;
 }
 #social_links ul {

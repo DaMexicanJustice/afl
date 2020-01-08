@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-buttons.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" media="screen" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="js/asteroidsUIText.js"></script>
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
@@ -105,10 +106,10 @@
 	<div id="header_inn">
 		<div id="menu">
 			<ul id="nav" class="nav">
-				<li><a href="#home_about_botm_bg">ABOUT ME</a></li>
-				<li><a href="#home_portfolio">PORTFOLIO</a></li>
-				<li class="padd"><a href="#home_blog">MY BLOG</a></li>
-				<li><a href="#home_contact">CONTACT ME</a></li>
+				<li><a href="#home_about_botm_bg">Om Butikken</a></li>
+				<li><a href="#home_portfolio">Udvalg</a></li>
+				<li class="padd disabled"><a href="#"><img src="images/comingsoon.png"></a></li>
+				<li><a href="#home_contact">Kontakt</a></li>
 			</ul>
 			<div class="clr"></div>
 		</div><!-- end div #menu -->
@@ -122,10 +123,16 @@
 <!-- END HEADER -->
 
 <!-- BEGIN ASTEROID-->
-<div id="asteroids" class="btn">
-	<a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='./asteroids.js';void(0);">
-		<i class="fa fa-rocket"></i>
-	</a>
+<div id="asteroids">
+	<div class="btnText">
+		<h2>Asteroids</h2>
+		<h3>Klik for at starte</h3>
+	</div>
+	<div class="btn">
+		<a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='./js/asteroids.js';void(0);">
+			<i class="fa fa-rocket"></i>
+		</a>
+	</div>
 </div>
 
 <!-- BEGIN HOME SECTION -->
@@ -141,45 +148,39 @@
 				<div id="home_slider_outer">
 					<div class="slider-wrapper theme-default">
 						<div id="slider" class="nivoSlider">
-							<img src="./blob/master/images/img_slides/slide_01.jpg" alt="#" title="#home_slider_bottom_1" />
-							<img src="./blob/master/images/img_slides/slide_02.jpg" alt="#" title="#home_slider_bottom_2" />
-							<img src="./blob/master/images/img_slides/slide_03.jpg" alt="#" title="#home_slider_bottom_3" />
-							<img src="./blob/master/images/img_slides/slide_04.jpg" alt="#" title="#home_slider_bottom_4" />
+							<img src="images/img_slides/slide-2.jpg" alt="#" title="#home_slider_bottom_2" />
+							<img src="images/img_slides/slide-3.jpg" alt="#" title="#home_slider_bottom_3" />
+							<img src="images/img_slides/slide-4.jpg" alt="#" title="#home_slider_bottom_4" />
 						</div><!-- end div #slider -->
 						<div id="htmlcaption" class="nivo-html-caption"> <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. </div>
 						<div class="clr"></div>
 					</div><!-- end div .slider-wrapper theme-default -->
-					<div id="home_slider_bottom_1" class="nivo-html-caption">
-						<h3>RETRO MUSIC WOOD</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.<br />
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/3985446689/" target="_blank">&nbsp;</a> </div>
-					</div><!-- end div #home_slider_bottom_1 -->
+					
 					<div id="home_slider_bottom_2" class="nivo-html-caption">
-						<h3>THE FAN</h3>
+						<h3>BUTIKKEN 1</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.<br />
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4036958438/" target="_blank">&nbsp;</a> </div>
+						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4036958438/" >&nbsp;</a> </div>
 					</div><!-- end div #home_slider_bottom_2 -->
 					<div id="home_slider_bottom_3" class="nivo-html-caption">
-						<h3>VINTAGE RETRO CLOCK</h3>
+						<h3>BUTIKKEN 2</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.<br />
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4031808720/" target="_blank">&nbsp;</a> </div>
+						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4031808720/" >&nbsp;</a> </div>
 					</div><!-- end div #home_slider_bottom_3 -->
 					<div id="home_slider_bottom_4" class="nivo-html-caption">
-						<h3>MILLER CINE</h3>
+						<h3>GADEBILLED</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.<br />
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4371721381/" target="_blank">&nbsp;</a> </div>
+						<div class="more_button"> <a href="http://www.flickr.com/photos/cubagallery/4371721381/" >&nbsp;</a> </div>
 					</div><!-- end div #home_slider_bottom_4 -->
 					<div class="clr"></div>
 				</div><!-- end div #home_slider_outer -->
 				<div class="clr"></div>
 			</div><!-- end div #home_top_inn -->
 			<div id="hello_welcome">
-				<h2>HELLO, I AM JOHN DOE.</h2>
-				<h3>WELCOME TO RETRO, MY ONE-PAGE XHTML SITE!</h3>
+				<h2>HEJSA!, MIT NAVN ER DANIEL</h2>
+				<h3>Hos Vintage Games finder du alt imellem himmel og jord i spil universet. </h3>
 				<div class="clr"></div>
 			</div><!-- end div #hello_welcome -->
 			<div class="clr"></div>
@@ -199,11 +200,11 @@
 			</div><!-- end div #about_go_top -->
 			<div id="home_about_desc">
 				<div id="home_about_desc_left">
-					<h3>ABOUT ME</h3>
+					<h3>OM MIG</h3>
 					<div class="clr"></div>
 				</div><!-- end div #home_about_desc_left -->
 				<div id="home_about_desc_right">
-					<p><a href="#"><img src="images/home_about_pic.jpg" alt="#" /></a><strong>Pasquale Vitiello</strong> was born on May 5 1982 in C/mmare di Stabia, NA (Italy). After attending Liceo Scientifico in Amalfi (SA), he graduated in Foreign Languages and Literature in 2005 and in Communications Studies in 2008 with high honors, at the ‘L’Orientale’ in Napoli (Italy) . Since 2006 he works in video post-production, for indipendent projects and in italian film industry. </p>
+					<p><a href="#"><img src="images/mig.jpg" alt="#" /></a><strong>Daniel</strong> /// Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis mi ut risus dapibus sagittis. Sed vestibulum nulla lacus, ac aliquet odio viverra eget. Aenean ut nisl non dolor iaculis imperdiet. Phasellus pellentesque congue justo, et rhoncus sem viverra nec. Donec ut orci sagittis, imperdiet nisi quis, faucibus nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
 					<div class="clr"></div>
 				</div><!-- end div #home_about_desc_right -->
 				<div class="clr"></div>
@@ -211,42 +212,32 @@
 			<div id="home_about_listing">
 				<ul>
 					<li>
-						<h2>MOVIES</h2>
-						<h3>WHAT I WATCH</h3>
-						<img src="images/about_img_1.png" alt="#" />
+						<h2>NYANSKAFFELSE</h2>
+						<H3>SE UDVALGET</H3>
+						<img src="images/Shopping_Cart_15.png" alt="#" />
 						<div class="about_listing_txt">
-							<p>As you've probably noticed, I'm a Film Geek... I'm heavily into Directors and their works and I'm always interested in what Directors people tend to like.</p>
-							<p>My <b>favourites</b> are Stanley Kubrick, David Lynch, David Cronenberg, Terry Gilliam, Alfred Hitchcock, Ken Russell, Gaspar Noe, Andrei Tarkovsky, Alejandro Jodorowsky, Kenneth Anger, Francis Ford Coppola.</p>
+							<p>Curabitur egestas enim volutpat quam commodo tincidunt. Suspendisse potenti. Fusce ut velit at tortor posuere dignissim in at odio. Morbi et tempor libero. In in nisl tempus, venenatis tortor vitae, volutpat lacus. Donec porta facilisis tortor vitae mattis. Nam venenatis enim lectus, et porttitor risus convallis vel.</p>
+							<p>Maecenas justo mi, vulputate at ex sit amet, hendrerit pellentesque ligula. Aenean ac tellus a sapien cursus blandit id et tellus. Vivamus eleifend mi nisi, sit amet interdum dolor fermentum sed. Pellentesque eget efficitur ligula. Aenean molestie sem non finibus dignissim. Donec laoreet sem vel risus ornare, in consequat justo fermentum. Sed et eros ut eros venenatis eleifend.</p>
 							<div class="clr"></div>
 						</div>
 					</li>
 					<li>
-						<h2>MUSIC</h2>
-						<h3>WHAT I LISTEN</h3>
-						<img src="images/about_img_2.png" alt="#" />
+						<h2>SÆLG</h2>
+						<H3>TJEN PENGE</H3>
+						<img src="images/bag-dollar-512.png" alt="#" />
 						<div class="about_listing_txt">
-							<p>The wonderful group from Liverpool - John, Paul, George and Ringo - <b>The Beatles</b>, is in my opinion one of the best things that have happened in music in the twentieth century.</p>
-							<p>I also love The Velvet Underground, The Rolling Stones, Talking Heads, The Clash, Sonic Youth, Steely Dan, Creedence Clearwater Revival and classical music.</p>
+							<p>Curabitur at nisl quis libero sagittis interdum. Etiam vel lorem enim. Etiam eget lacus iaculis, molestie felis et, condimentum nisl. Ut sit amet semper libero. Integer imperdiet finibus aliquet. Duis a felis dolor. Vivamus quis nulla purus.</p>
+							<p>Donec tempus ultrices odio, non accumsan dolor porttitor at. Sed tincidunt interdum viverra. Praesent ex justo, feugiat vitae arcu at, vulputate viverra velit. Aenean efficitur dolor non feugiat ultricies. Aliquam gravida volutpat nibh, ut mattis odio venenatis non.</p>
 							<div class="clr"></div>
 						</div>
 					</li>
 					<li>
-						<h2>TEXT</h2>
-						<h3>WHAT I READ</h3>
-						<img src="images/about_img_3.png" alt="#" />
+						<h2>BYT</h2>
+						<H3>LAV BYTTEHANDEL</H3>
+						<img src="images//industry-line_handshake-512.png" alt="#" />
 						<div class="about_listing_txt">
-							<p>I came up with a list of 8 books that I consider must-reads from both contemporary and classic literature:</p>
-							<p>To Kill a Mockingbird (Harper Lee), The Great Gatsby (F. Scott Fitzgerald), Emma (Jane Austen), Jane Eyre (Charlotte Bronte), 1984  (George Orwell), Fahrenheit 451 (Ray Bradbury), Catch-22 (Joseph Heller), Cloud Atlas (David Mitchell).</p>
-							<div class="clr"></div>
-						</div>
-					</li>
-					<li class="last_li">
-						<h2>PHOTO</h2>
-						<h3>WHAT I SHOOT</h3>
-						<img src="images/about_img_4.png" alt="#" />
-						<div class="about_listing_txt">
-							<p>As a photographer, I like to question everything. I like to understand how things work, why they are how they are, and how it affects what I do.</p>
-							<p>One of my latest ponderings really got me thinking, so I ran it past US based photographer Chase Jarvis for his opinion. Not only did he have his own take, but he also felt compelled to post the question on his blog.</p>
+							<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam nec ullamcorper sem. Donec commodo nunc felis, et vestibulum quam varius et. Etiam commodo ex vel elementum molestie. In hac habitasse platea dictumst. Cras vitae pulvinar odio. Nulla facilisi.</p>
+							<p>Suspendisse turpis metus, rhoncus non urna vel, pulvinar vestibulum felis. Vivamus dapibus sagittis convallis. Aenean vulputate purus metus, ac iaculis dolor imperdiet eget. Ut eros nunc, fermentum a lacinia eu, tincidunt placerat eros. Vivamus finibus feugiat sollicitudin. Sed hendrerit, sapien id egestas porta, dolor nisl tincidunt est, hendrerit vehicula mauris sem ac turpis.</p>
 							<div class="clr"></div>
 						</div>
 					</li>
@@ -270,50 +261,63 @@
 			</div><!-- end div #portfolio_go_top -->
 			<div id="home_portfolio_desc">
 				<div id="home_portfolio_desc_left">
-					<h3>PORTFOLIO</h3>
+					<h3>UDVALG</h3>
 					<div class="clr"></div>
 				</div><!-- end div #home_portfolio_desc_left -->
 				<div id="home_portfolio_desc_right">
-					<p><strong>Skills</strong> // Adobe After Effects, Adobe Flash, Adobe Illustrator, Adobe Lightroom, Adobe Photoshop, Adobe Premiere Pro, Apple Final Cut Pro, Apple Aperture, Apple Color, Apple DVD Studio Pro, AppleSoundtrack, Avid Media Composer, 2d3 Boujou, Imagineer System Mocha, Red Camera Workflow, The Foundry Nuke, Drupal, Wordpress, Joomla, html, css.</p>
+					<p><strong>Om</strong> // Hos Vintage Games finder du alt mellem himmel og jord i spil universet. Her kan du finde alt fra normale spil, du havde som lille, til de mere obskure og sjældne titler. Udover det kan du også komme ned og sælge dine gamle spil i butikken. :)</p>
 					<div class="clr"></div>
 				</div><!-- end div #home_portfolio_desc_right -->
 				<div class="clr"></div>
 			</div><!-- end div #home_portfolio_desc -->
 			<div id="filter_menu" class="filter_container">
-				<label>FILTER BY:</label>
+				<label>SORTER:</label>
 				<ul id="filter" class="filter_1">
-					<li><a href="#all">all</a></li>
-					<li><a href="#picture">pictures</a></li>
-					<li><a href="#video">videos</a></li>
-					<li><a href="#text">text</a></li>
+					<li><a href="#all">Vis alle</a></li>
+					<li><a href="#sega">Sega</a></li>
+					<li><a href="#nintendo">Nintendo</a></li>
+					<li><a href="#microsoft">Microsoft</a></li>
+					<li><a href="#sony">Sony</a></li>
 				</ul>
 				<div class="clr"></div>
 			</div><!-- end div #filter_menu-->
 			<div id="portfolio_listing">
 				<ul class="projects image-grid_1" id="image-grid">
-					<li data-category="picture"> <img src="images/folio_pic1.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="images/folio_pic1_big.jpg" id="image1" class="icon_camera" title="Retro Typography">&nbsp;</a></span>
-						<p><a href="http://www.flickr.com/photos/cubagallery/4230066050/" target="_blank">RETRO TYPOGRAPHY</a></p>
+					<li data-category="sony"> <img src="images/Sony-PlayStation-1.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image1" class="icon_ps" title="PS1">&nbsp;</a></span>
+						<p><a href="#quote1">Playstation 1</a></p>
 					</li>
-					<li data-category="video"> <img src="images/folio_pic2.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="http://www.youtube.com/watch?v=jU9AOJWn5JE?fs=1&amp;autoplay=1" class="icon_youtube" title="Retro Slides - Keynote Presentation Template">&nbsp;</a></span>
-						<p><a href="http://graphicriver.net/item/retro-slides-keynote-template-full-hd/841293?ref=pacovitiello1">A Keynote Template</a></p>
+					<li data-category="sony"> <img src="images/PlayStation-2.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image2" class="icon_ps" title="PS2">&nbsp;</a></span>
+						<p><a href="#quote1">Playstation 2</a></p>
 					</li>
-					<li data-category="text"> <img src="images/folio_pic3.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image2" class="icon_text">&nbsp;</a></span>
-						<p>READ THIS QUOTE</p>
+					<li data-category="sony"> <img src="images/playstation-3.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image3" class="icon_ps" title="PS3">&nbsp;</a></span>
+						<p>Playstation 3</p>
 					</li>
-					<li class="last_li" data-category="picture"> <img src="images/folio_pic4.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="images/folio_pic4_big.jpg" id="image3" class="icon_camera" title="Retro Graffiti">&nbsp;</a></span>
-						<p><a href="http://www.flickr.com/photos/cubagallery/3953315662/" target="_blank">RETRO GRAFFITI</a></p>
+					<li class="last_li" data-category="nintendo"> <img src="images/nes.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image4" class="icon_nintendo" title="NES">&nbsp;</a></span>
+						<p><a href="http://www.flickr.com/photos/cubagallery/3953315662/" ></a>Nintendo (NES)</p>
 					</li>
-					<li data-category="text"> <img src="images/folio_pic5.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote2" id="image4" class="icon_text">&nbsp;</a></span>
-						<p>MY POEMS - VOL 1</p>
+					<li data-category="nintendo"> <img src="images/snes.original.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image5" class="icon_nintendo" title="SNES">&nbsp;</a></span>
+						<p>Super Nintendo (SNES)</p>
 					</li>
-					<li data-category="picture"> <img src="images/folio_pic8.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="images/folio_pic8_big.jpg" id="image5" class="icon_camera" title="Orange Clock">&nbsp;</a></span>
-						<p><a href="http://www.flickr.com/photos/cubagallery/4466636070/" target="_blank">ORANGE CLOCK</a></p>
+					<li data-category="nintendo"> <img src="images/gameboy.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image6" class="icon_nintendo" title="Gameboy">&nbsp;</a></span>
+						<p><a href="http://www.flickr.com/photos/cubagallery/4466636070/" >Gameboy</a></p>
 					</li>
-					<li data-category="video"> <img src="images/folio_pic9.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="http://www.youtube.com/watch?v=ClRPpVFJPw4?fs=1&amp;autoplay=1" class="icon_youtube" title="Simple Pro - Interactive PowerPoint Template">&nbsp;</a></span>
-						<p><a href="http://graphicriver.net/item/simple-pro-powerpoint-interactive-template/1261641?ref=pacovitiello1">A PowerPoint Template</a></p>
+					<li data-category="microsoft"> <img src="images/xbox_360.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image7" class="icon_xbox" title="Xbox 360">&nbsp;</a></span>
+						<p><a href="http://graphicriver.net/item/simple-pro-powerpoint-interactive-template/1261641?ref=pacovitiello1">Xbox 360</a></p>
 					</li>
-					<li class="last_li" data-category="video"> <img src="images/folio_pic10.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="http://vimeo.com/24081323" class="icon_vimeo" title="Pasquale Vitello'Showreel 2010" >&nbsp;</a></span>
-						<p><a href="http://vimeo.com/pasqualevitiello" target="_blank">SHOWREEL 2010</a></p>
+					<li class="last_li" data-category="sega"> <img src="images/dreamcast.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /><span><a href="#quote1" id="image8" class="icon_sega" title="Sega Dreamcast">&nbsp;</a></span>
+						<p><a href="http://vimeo.com/pasqualevitiello" >Sega Dreamcast</a></p>
+					</li>	
+					<li data-category="nintendo"> <img src="images/gba.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_nintendo" title="GBA">&nbsp;</a></span>
+						<p>Gameboy Advance (GBA)</p>
+					</li>
+					<li data-category="sega"> <img src="images/sega_megadrive.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_sega" title="Sega Genesis">&nbsp;</a></span>
+						<p><a href="http://www.flickr.com/photos/cubagallery/4466636070/" >Sega Genesis</a></p>
+					</li>
+					<li data-category="sega"> <img src="images/sega_mastersystem.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_sega" title="Sega Mastersystem">&nbsp;</a></span>
+						<p><a href="http://graphicriver.net/item/simple-pro-powerpoint-interactive-template/1261641?ref=pacovitiello1">Sega Mastersystem</a></p>
+					</li>
+					<li class="last_li" data-category="nintendo"> <img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="#quote1" id="image8" class="icon_nintendo" title="Nintendo 64" >&nbsp;</a></span>
+						<p><a href="http://vimeo.com/pasqualevitiello" >Nintendo 64</a></p>
 					</li>					
 				</ul>
 				<div class="clr"></div>
@@ -329,13 +333,12 @@
 <!-- quote1 -->
 <div style="display: none;">
 	<div id="quote1" class="quote">
-		<div class="title_quote">This is the Title</div>
-		<div class="subtitle_quote">Here we have an incredible subtitle</div>
+		<div class="title_quote">Under udvikling</div>
+		<div class="subtitle_quote">Dette link vil snarest fører til mit inventar</div>
 		<div class="body_quote">
-			<p>The standard Lorem Ipsum passage, used since the 1500s
-				&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;
-				Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC
-				&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;</p>
+			<p>Indtil at jeg får selve udvalget oploadet til sitet og vist på en præsentabel måde, kan efterspørgsler vedrørende spil foretages via email, kontaktform eller telefon. 
+				Du er selvfølgelig altid mere end velkommen til at kigge forbi butikken i person!
+			</p>
 		</div>
 	</div><!-- end div #quote1 -->
 </div><!-- end quote1 -->
@@ -352,136 +355,20 @@
 		</div>
 	</div><!-- end div #quote2 -->
 </div><!-- end quote2 -->
+
+<!-- quote3 -->
+<div style="display: none;">
+	<div id="quote3" class="quote">
+		<div class="title_quote">Under udvikling</div>
+		<div class="subtitle_quote">Kommer på en senere dato</div>
+		<div class="body_quote"> <img src="images/folio_pic5.jpg" alt="" class="image_quote">
+			<p>Kommer på en senere dato</p>
+		</div>
+	</div><!-- end div #quote3 -->
+</div><!-- end quote3 -->
 <!-- END FANCYBOX TXT CONTENT -->
 <!-- END PORTFOLIO SECTION -->
 
-<!-- BEGIN BLOG SECTION -->
-<div id="home_blog" class="section" data-key="B">
-	<div id="home_blog_botm_bg">
-		<div id="home_blog_inn">
-			<div id="home_blog_go_top"> <a href="#home_top" class="scroll">&nbsp;</a>
-				<div class="clr"></div>
-			</div><!-- end div home_blog_go_top -->
-			<div id="home_blog_desc">
-				<div id="home_blog_desc_left">
-					<h3>MY BLOG</h3>
-					<div class="clr"></div>
-				</div><!-- end div #home_blog_desc_left -->
-				<div id="home_blog_desc_right">
-					<p><strong>About this Blog </strong>// Music was my first love. I like many music genres, but my favourites are classic rock, alternative and electronic music. Anyway, my most genuine passion, the one that eventually took over the others and to whom I dedicated myself, has been and still is cinema. During the last year I found out an other great love: Photography. Finally, there's literature. I never go to sleep before having read some pages of some book.</p>
-					<div class="clr"></div>
-				</div><!-- end div #home_blog_desc_right -->
-				<div class="clr"></div>
-			</div><!-- end div #home_blog_desc -->
-			<div id="home_blog_content">
-				<div id="home_blog_content_left">
-					<div id="home_blog_listing">
-						<ul>
-							<li>
-								<div class="home_blog_pic"> <img src="images/folio_pic6.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="images/folio_pic6_big.jpg" id="image6" class="icon_camera" title="Retro Design">&nbsp;</a></span>
-									<div class="title_blog_pics"><a href="http://www.flickr.com/photos/cubagallery/4018332351/" target="_blank">RETRO DESIGN</a></div>
-									<div class="clr"></div>
-								</div>
-								<div class="home_blog_listing_txt">
-									<div class="home_blog_post"> <span class="post_title"> <a href="post.html">CUBA GALLERY: A GREAT LR RESOURCE</a> </span>
-										<h4>AUTHOR: <a href="#">JOHN DOE</a> // CATEGORY: <a href="#">PHOTOGRAPHY</a></h4>
-										<span class="post_comments"><a href="#">12 COMMENTS</a></span>
-										<div class="clr"></div>
-									</div>
-									<label>30 <br />
-									JAN</label>
-									<p><a href="http://www.cubagallery.co.nz/">Cuba Gallery</a> is a team of design and photographic enthusiasts who love to bring stunning imagery out into the open. They're based in New Zealand but enjoy seeing and dealing in work from all parts of the world. Their goal is to provide a great place for designers, photographers and artists to sell, share and see work of the highest standard... <br />
-										<a class="continue_reading" href="post.html">Continue Reading</a></p>
-									<div class="clr"></div>
-								</div>
-							</li>
-							<li>
-								<div class="home_blog_pic"> <img src="images/folio_pic7.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> <span><a href="images/folio_pic7_big.jpg" id="image7" class="icon_camera" title="Retro Portrait">&nbsp;</a></span>
-									<div class="title_blog_pics"><a href="http://www.flickr.com/photos/cubagallery/3892222870/" target="_blank">RETRO PORTRAIT</a></div>
-									<div class="clr"></div>
-								</div>
-								<div class="home_blog_listing_txt">
-									<div class="home_blog_post"> <span class="post_title"> <a href="post.html">THIS IS AN OTHER BLOG POST</a> </span>
-										<h4>AUTHOR: <a href="#">JOHN DOE</a> // CATEGORY: <a href="#">MOVIES</a></h4>
-										<span class="post_comments"><a href="#">12 COMMENTS</a></span>
-										<div class="clr"></div>
-									</div>
-									<label>05 <br />
-									DEC</label>
-									<p>Dicing elit, sed do eiusmod tempor incididunt ulabore et dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore.
-										Ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore.... <br />
-										<a class="continue_reading" href="post.html">Continue Reading</a></p>
-									<div class="clr"></div>
-								</div>
-							</li>
-						</ul>
-						<div class="clr"></div>
-					</div><!-- end div #home_blog_listing -->
-					<div class="home_blog_bottom_txt">
-						<div class="home_blog_post full_width"> <span class="post_title"> <a href="#">ONLY TEXT BLOG POST</a> </span>
-							<div class="clr"></div>
-							<h4>AUTHOR: <a href="#">JOHN DOE</a> // CATEGORY: <a href="#">MOVIES</a></h4>
-							<span class="post_comments"><a href="#">12 COMMENTS</a></span>
-							<div class="clr"></div>
-						</div>
-						<div class="home_blog_post_txt full_width">
-							<label>05 <br />
-							MAY</label>
-							<p>Dicing elit, sed do eiusmod tempor incididunt ulabore et dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. 
-								Dicing elit, sed do eiusmod tempor incididunt ulabore et dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.<br />
-								<a class="continue_reading" href="post.html">Continue Reading</a></p>
-							<div class="clr"></div>
-						</div>
-						<div class="clr"></div>
-					</div>
-					<div class="clr"></div>
-				</div><!-- end div #home_blog_content_left -->
-				<div id="home_blog_content_right">
-					<div id="home_blog_search">
-						<h3>SEARCH</h3>
-						<p>INTO MY BLOG</p>
-						<div id="home_blog_search_div">
-							<input id="search" type="text" name="search" value="Search the Blog" />
-							<a href="#">&nbsp;</a>
-							<div class="clr"></div>
-						</div><!-- end div #home_blog_search_div -->
-						<div class="clr"></div>
-					</div><!-- end div #home_blog_search -->
-					<div id="home_blog_categories">
-						<h3>CATEGORIES</h3>
-						<p>CHOOSE THE ARGUMENT</p>
-						<ul>
-							<li><a href="#">design</a></li>
-							<li><a href="#">movies</a></li>
-							<li><a href="#">music</a></li>
-							<li><a href="#">literature</a></li>
-							<li><a href="#">photoshop</a></li>
-							<li><a href="#">wordpress</a></li>
-							<li><a href="#">photos</a></li>
-						</ul>
-						<div class="clr"></div>
-					</div><!-- end div #home_blog_categories -->
-					<div id="home_blog_comments" class="home_blog_sidebar">
-						<h3>COMMENTS</h3>
-						<p>THE LATEST ONES</p>
-						<ul>
-							<li>JOHN DOE // <a href="#"> THIS IS A BLOG POST</a></li>
-							<li>JOHN DOE //<a href="#"> THIS IS AN OTHER BLOG POST</a></li>
-							<li>JOHN DOE //<a href="#"> ONLY TEXT BLOG POST</a></li>
-							<li>JOHN DOE //<a href="#"> THIS IS AN OTHER BLOG POST</a></li>
-						</ul>
-						<div class="clr"></div>
-					</div><!-- end div #home_blog_comments -->
-				</div><!-- end div #home_blog_content_right -->
-				<div class="clr"></div>
-			</div><!-- end div #home_blog_content -->
-			<div class="clr"></div>
-		</div><!-- end div #home_blog_inn -->
-		<div class="clr"></div>
-	</div><!-- end div #home_blog_botm_bg -->
-	<div class="clr"></div>
-</div><!-- end div #home_blog -->
-<!-- END BLOG SECTION -->
 
 <!-- BEGIN CONTACT SECTION -->
 <div id="home_contact" class="section" data-key="C">
@@ -492,14 +379,14 @@
 			</div><!-- end div #home_contact_go_top -->
 			<div id="home_contact_desc">
 				<div id="home_contact_desc_left">
-					<h3>CONTACT ME</h3>
+					<h3>KONTAKT</h3>
 					<div class="clr"></div>
 				</div><!-- end div #home_contact_desc_left -->
 				<div id="home_contact_desc_right">
-					<p><strong>Address </strong>// 1571-1599 Market Street<br />
-						San Francisco, CA 94103</p>
-					<p class="phon_no"><strong>Telephone nr</strong>. // (650) 695-143236</p>
-					<p class="email"><strong>E-Mail</strong> // <a href="mailto:contact@retrotemplate.com">contact@retrotemplate.com</a></p>
+					<p><strong>Adresse </strong>// Ahornsvej 3<br />
+						2750, Ballerup, Danmark</p>
+					<p class="phon_no"><strong>Telefon nr</strong>. // (+45) 60 74 76 87</p>
+					<p class="email"><strong>E-Mail</strong> // <a href="mailto:kontakt@vintagegames.dk">kontakt@vintagegames.dk</a></p>
 					<div class="clr"></div>
 				</div><!-- end div #home_contact_desc_right -->
 				<div class="clr"></div>
@@ -507,12 +394,12 @@
 			<div id="contact_filelds">
 					<form action="contactform.php" method="post" id="contact_form">
 					<fieldset id="contact_filelds_left">
-					<input id="name" type="text" name="name" value="Your Name*" />
-					<input id="email" type="text" name="email" value="Your e-mail address*" />
-					<textarea id="subject" name="subject">Subject</textarea>
+					<input id="name" type="text" name="name" value="Dit navn*" />
+					<input id="email" type="text" name="email" value="Din email adresse*" />
+					<textarea id="subject" name="subject">Emne</textarea>
 					</fieldset>
 					<fieldset id="contact_filelds_right">
-					<textarea id="message" name="message">Type here your message...*</textarea>
+					<textarea id="message" name="message">Skriv din besked her...*</textarea>
 					<input type="submit" value="" />
 					</fieldset>
 					</form>
@@ -521,16 +408,19 @@
 			</div><!-- end div #contact_filelds -->
 			<div id="social_links">
 				<ul>
+					<!-- 
 					<li><a href="#" class="social_link1">&nbsp;</a></li>
 					<li><a href="#" class="social_link2">&nbsp;</a></li>
 					<li><a href="#" class="social_link3">&nbsp;</a></li>
 					<li><a href="#" class="social_link4">&nbsp;</a></li>
-					<li><a href="#" class="social_link5">&nbsp;</a></li>
+					-->
+					<li><a href="https://www.facebook.com/Vintage-Games-DK-100867137994708/" class="social_link5">&nbsp;</a></li>
+					<!-- 
 					<li><a href="#" class="social_link6">&nbsp;</a></li>
 					<li><a href="#" class="social_link7">&nbsp;</a></li>
+					-->
 				</ul>
-				<p><a href="#">Updates // </a>Subscribe <a href="#">RSS feed</a> to<br />
-					receive updates.</p>
+				
 				<div class="clr"></div>
 			</div><!-- end div #social_links -->
 			<div class="clr"></div>
