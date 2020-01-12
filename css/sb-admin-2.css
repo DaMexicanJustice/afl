@@ -47,6 +47,38 @@
   box-sizing: border-box;
 }
 
+
+
+
+
+
+
+/* Custom */
+img {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.h-divider{
+  margin-top:5px;
+  margin-bottom:5px;
+  height:1px;
+  width:100%;
+  border-top:1px solid gray;
+ }
+
+
+ .visualizer {
+   margin: 100px;
+ }
+
+
+
+
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -82,6 +114,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  text-align:center;
 }
 
 p {
@@ -382,6 +415,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.75rem;
+  
 }
 
 h4, .h4 {
