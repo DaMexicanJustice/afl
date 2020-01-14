@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    authenticate();
-});
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBMG-wOi-M43KII-za6C8fAO56Jd_Wphc0",
@@ -17,36 +13,23 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
 function signIn() {
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
+  var userEmail = document.getElementById("loginEmail").value;
+  var userPassword = document.getElementById("loginPwd").value;
+  console.log(userEmail, userPassword);
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
+    //then
+    console.log(user);
+    document.cookie = "email="+userEmail+";"+"password="+userPassword;
   });
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      window.location('https://damexicanjustice.github.io/afl/dashboard.html'):
-    } else {
-      // No user is signed in.
-    }
-  });
-
-}
-
-function authenticate() {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-        } else {
-          window.location = "https://damexicanjustice.github.io/afl/retro.html";
-        }
-      });
 }
 
 function signOut() {
     firebase.auth().signOut().then(function(){
       authenticate();
     });
+}
+
+function isAuthorized() {
+    return document.cookie == "" ? false : true;
 }
