@@ -20,10 +20,10 @@ function signIn() {
     //then
     console.log(user);
     document.cookie = "email="+userEmail+";"+"password="+userPassword;
-    window.Location = "./dashboard.html";
+    window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password");
-    window.Location = "./login.html";
+    window.location = "./login.html";
   });
 }
 
