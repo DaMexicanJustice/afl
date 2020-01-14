@@ -21,7 +21,7 @@ function signIn() {
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
     //then
     console.log(user);
-    document.cookie = "email="+userEmail+";"+" pwd="+userPassword +"; ";
+    document.cookie = "email = "+userEmail+"; password = " + userPassword +";";
     console.log(document.cookie);
     //window.location = "./dashboard.html";
   }).catch(function(error) {
