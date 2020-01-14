@@ -50,7 +50,8 @@ function isAuthorized() {
   }); */
 }
 
-function writeFirebaseData(txt) {
+function writeFirebaseData(id) {
+  var txt = document.getElementById("text"+id).value;
   firebase.database().ref('pages/landing/').set({
     text: txt
   });
