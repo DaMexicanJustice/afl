@@ -9,8 +9,10 @@ var firebaseConfig = {
     appId: "1:761347593076:web:7e5801b3eb0e94e34ad221",
     measurementId: "G-2BG2L826ME"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
 function signIn() {
   var userEmail = document.getElementById("loginEmail").value;
@@ -20,7 +22,8 @@ function signIn() {
     //then
     console.log(user);
     document.cookie = "email="+userEmail+";"+"password="+userPassword;
-    window.location = "./dashboard.html";
+    console.log(document.cookie);
+    //window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password");
     window.location = "./login.html";
@@ -45,4 +48,17 @@ function isAuthorized() {
     alert("Forkert brugernavn eller password");
     window.Location = "./login.html";
   }); */
+}
+
+function writeFirebaseData(txt) {
+  firebase.database().ref('pages/landing/').set({
+    text: txt
+  });
+}
+
+function readFirebaseData(page) {
+  // once() method
+  firebase.database().ref('pages/'+page).on('value',(snap)=>{
+    console.log(snap.val());
+  });
 }
