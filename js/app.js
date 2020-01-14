@@ -20,8 +20,11 @@ function signIn() {
     //then
     console.log(user);
     document.cookie = "email="+userEmail+";"+"password="+userPassword;
+    window.Location = "./dashboard.html";
+  }).catch(function(error) {
+    alert("Forkert brugernavn eller password");
+    window.Location = "./login.html";
   });
-
 }
 
 function signOut() {
@@ -31,5 +34,15 @@ function signOut() {
 }
 
 function isAuthorized() {
-    return document.cookie == "" ? false : true;
+  console.log(document.cookie);
+  /*
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
+    //then
+    console.log(user);
+    document.cookie = "email="+userEmail+";"+"password="+userPassword;
+    window.Location = "./dashboard.html";
+  }).catch(function(error) {
+    alert("Forkert brugernavn eller password");
+    window.Location = "./login.html";
+  }); */
 }
