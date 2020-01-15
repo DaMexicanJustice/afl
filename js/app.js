@@ -21,9 +21,9 @@ function signIn() {
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
     //then
     console.log(user);
-    document.cookie = "email = "+userEmail+"; password = " + userPassword +";";
+    document.cookie = "email = "+userEmail;
     console.log(document.cookie);
-    //window.location = "./dashboard.html";
+    window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password");
     window.location = "./login.html";
@@ -38,16 +38,9 @@ function signOut() {
 
 function isAuthorized() {
   console.log(document.cookie);
-  /*
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
-    //then
-    console.log(user);
-    document.cookie = "email="+userEmail+";"+"password="+userPassword;
-    window.Location = "./dashboard.html";
-  }).catch(function(error) {
-    alert("Forkert brugernavn eller password");
-    window.Location = "./login.html";
-  }); */
+  if (!document.cookie.search("vintagegamesdkfirebase@gmail.com")) {
+      window.location = "./login.html";
+  }
 }
 
 function writeFirebaseData(id) {
