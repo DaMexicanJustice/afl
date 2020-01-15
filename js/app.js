@@ -58,6 +58,7 @@ function readFirebaseData(page, id) {
   // once() method
   firebase.database().ref('pages/'+page).on('value',(snap)=>{
     console.log(snap.val().text);
+    console.log($("#text"+id));
     $("#text"+id).value = snap.val().text;
   });
 }
