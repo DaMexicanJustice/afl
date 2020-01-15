@@ -62,7 +62,7 @@ function readFirebaseData(page, id) {
   firebase.database().ref('pages/'+page).on('value',(snap)=>{
     console.log(snap.val().text);
     console.log($("#text"+id));
-    $("#text"+id).value = snap.val().text;
+    document.getElementById("text"+id).value = snap.val().text;
   });
 }
 
