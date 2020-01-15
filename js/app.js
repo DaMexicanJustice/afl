@@ -1,3 +1,5 @@
+var version = "1.0.a";
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyBMG-wOi-M43KII-za6C8fAO56Jd_Wphc0",
@@ -58,4 +60,8 @@ function readFirebaseData(page, id) {
     console.log(snap.val().text);
     $("#text"+id).value = snap.val().text;
   });
+}
+
+function checkVersionOfWebApp() {
+  console.log(version);
 }
