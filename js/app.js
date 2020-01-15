@@ -44,7 +44,9 @@ function isAuthorized() {
 }
 
 function writeFirebaseData(id) {
+  console.log(id);
   var txt = document.getElementById("text"+id).value;
+  console.log(txt);
   firebase.database().ref('pages/landing/').set({
     text: txt
   });
