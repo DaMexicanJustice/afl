@@ -13,7 +13,10 @@ var firebaseConfig = {
   };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 var database = firebase.database();
 
 function signIn() {
