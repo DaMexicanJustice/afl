@@ -55,7 +55,7 @@ function writeFirebaseData(id) {
 function readFirebaseData(page, id) {
   // once() method
   firebase.database().ref('pages/'+page).on('value',(snap)=>{
-    console.log(snap.val(), page, id);
-    $("#text"+id).value = snap.val();
+    console.log(snap.val().text);
+    $("#text"+id).value = snap.val().text;
   });
 }
