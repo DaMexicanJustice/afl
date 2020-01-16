@@ -52,17 +52,18 @@ function writeFirebaseData(id) {
   console.log(id);
   var txt = document.getElementById("text"+id).value;
   console.log(txt);
-  firebase.database().ref('pages/landing/').set({
-    text: txt
+  firebase.database().ref('pages/texts/'+id).set({
+    text: txt,
+    ref: id
   });
 }
 
-function readFirebaseData(page, id) {
+function readFirebaseData(id) {
   // once() method
-  firebase.database().ref('pages/'+page).on('value',(snap)=>{
+  firebase.database().ref('pages/texts/'+id).on('value',(snap)=>{
     console.log(snap.val().text);
     console.log($("#text"+id));
-    document.getElementById("text"+id).value = snap.val().text;
+    document.getElementById("text"+id).value = snap.val().text.charAt(0).toUppserCase() + snap.val().text.slice(1);
   });
 }
 
