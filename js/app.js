@@ -63,7 +63,7 @@ function readFirebaseData(id) {
   firebase.database().ref('pages/texts/'+id).on('value',(snap)=>{
     console.log(snap.val().text);
     console.log($("#text"+id));
-    document.getElementById("text"+id).value = snap.val().text.charAt(0).toUppserCase() + snap.val().text.slice(1);
+    document.getElementById("text"+id).value = snap.val().text.charAt(0).toUpperCase() + snap.val().text.slice(1);
   });
 }
 
