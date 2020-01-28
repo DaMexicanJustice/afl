@@ -415,12 +415,17 @@
 				</div><!-- end div #home_contact_desc_right -->
 				<div class="clr"></div>
 			</div><!-- end div #home_contact_desc -->
-			<div id="contact_filelds">
+			<div id="contact_filelds" class="form-group">
 					<form action="contactform.php" method="post" id="contact_form">
 					<fieldset id="contact_filelds_left">
 					<input id="name" type="text" name="name" value="Dit navn*" />
 					<input id="email" type="text" name="email" value="Din email adresse*" />
-					<textarea id="subject" name="subject">Emne</textarea>
+					<select class="custom_box" id="subject" name="subject">
+						<option>Vælg Et Emne</option>
+						<option>Salg af samling</option>
+						<option>Spørgsmål til produkt</option>
+						<option>Andet</option>
+					</select>
 					</fieldset>
 					<fieldset id="contact_filelds_right">
 					<textarea id="message" name="message">Skriv din besked her...*</textarea>
