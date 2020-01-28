@@ -73,6 +73,10 @@
 	display: block;
 }
 
+#u_0_0 > tbody > tr > td > table > tbody > tr > td._51m-._2pir._51mw > div {
+	height: 30px !important;
+	color: white !important;
+}
 
 
 /* Pirate */
@@ -137,7 +141,7 @@ fieldset {
 	width:100%;
 	position:fixed;
 	height:130px;
-	background:url(../images/body_bg.png) repeat-x;
+	background:url(../images/body_bg-purple.png) repeat-x;
 	/*background-color: #663399;
 	outline: 1px vshed #000000;
 	outline-offset: 0px;
@@ -160,7 +164,7 @@ fieldset {
 	padding-right:40px;
 }
 #menu ul li.padd {
-	padding-left:180px;
+	padding-left:135px;
 }
 #menu ul li a {
 	color:#f6edd8;
@@ -185,7 +189,7 @@ fieldset {
 /* === Home Section === */
 #home_top {
 	width:100%;
-	background:url(../images/home_top_1_bg.jpg) repeat;
+	background:url(../images/portfolio_bg.jpg) repeat;
 	/*background-color: #663399;
 	outline: 1px dashed #000000;
 	outline-offset: 0px;
@@ -196,7 +200,7 @@ fieldset {
 }
 #home_top_botm_bg {
 	width:100%;
-	background:url(../images/home_top_botm_bg.jpg) bottom center repeat-x;
+	background:url(../images/home_top_botm_bg_orange.jpg) bottom center repeat-x;
 	padding-bottom:42px;
 }
 #home_top_inn {
@@ -313,7 +317,7 @@ fieldset {
 	font-weight: normal;
 	padding-bottom:0px;
 	padding-left:48px;
-	background:url(../images/h_lft_bg.jpg) left top no-repeat;
+	background:url(../images/h_lft_bg_orange.jpg) left top no-repeat;
 	padding-bottom: 2px;
 }
 #hello_welcome h3 {
@@ -323,7 +327,7 @@ fieldset {
 	text-transform:uppercase;
 	text-align:right;
 	padding-right:34px;
-	background:url(../images/h_rit_bg.jpg) right bottom no-repeat;
+	background:url(../images/h_rit_bg_orange.jpg) right bottom no-repeat;
 	font-weight:normal;
 }
 /* === About Section === */
@@ -379,7 +383,7 @@ fieldset {
 	color:#383838;
 	height:120px;
 	font-weight:normal;
-	font-size:120px;
+	font-size: 80px;
 	font-family: 'BazarMedium';
 	border-right:2px solid #2f2f2f;
 }
@@ -427,10 +431,11 @@ fieldset {
 	padding-bottom:15px;
 }
 #home_about_listing ul li img {
-	width:176px;
-	height:176px;
+	width:50%;
 	display:block;
 	margin-bottom:18px;
+	margin-left: auto;
+	margin-right: auto;
 }
 #home_about_listing ul li p {
 	color:#383838;
@@ -1208,46 +1213,59 @@ div.home_blog_post_txt.full_width a {
 	font-size:14px;
 	text-align: center;
 }
+
 #social_links {
-	width: 57%;
-	float:right;
+	width: 65%;
+	float: right;
 }
+
 #social_links ul {
 	padding-bottom:22px;
 	float:left;
 }
 #social_links ul li {
-	width:81px;
-	height:81px;
 	float:left;
 	padding-right:20px;
 }
+
 #social_links ul li a {
 	width:81px;
 	height:81px;
 	display:block;
-	margin-top:3px;
-}
+} 
+
 #social_links ul li a.social_link1 {
-	background:url(../images/social_sprites.png) -0px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -0px -0px no-repeat;
 }
 #social_links ul li a.social_link2 {
-	background:url(../images/social_sprites.png) -81px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -84px -0px no-repeat;
 }
 #social_links ul li a.social_link3 {
-	background:url(../images/social_sprites.png) -162px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -168px -0px no-repeat;
 }
 #social_links ul li a.social_link4 {
-	background:url(../images/social_sprites.png) -243px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -252px -0px no-repeat;
 }
 #social_links ul li a.social_link5 {
-	background:url(../images/social_sprites.png) -324px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -336px -0px no-repeat;
 }
 #social_links ul li a.social_link6 {
-	background:url(../images/social_sprites.png) -405px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -420px -0px no-repeat;
 }
 #social_links ul li a.social_link7 {
-	background:url(../images/social_sprites.png) -486px -0px no-repeat;
+	background:url(../images/social-icons-sprite-2.png) -504px -0px no-repeat;
+}
+#social_links ul li a.social_link8 {
+	background:url(../images/social-icons-sprite-2.png) -588px -0px no-repeat;
+}
+#social_links ul li a.social_link9 {
+	background:url(../images/social-icons-sprite-2.png) -672px -0px no-repeat;
+}
+#social_links ul li a.social_link10 {
+	background:url(../images/social-icons-sprite-2.png) -756px -0px no-repeat;
+}
+#social_links ul li a.social_link11 {
+	background:url(../images/social-icons-sprite-2.png) -840px -0px no-repeat;
 }
 #social_links ul li a:hover {
 	margin-top:0px;
