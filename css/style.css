@@ -96,7 +96,7 @@ body select {
     background: url("https://i.ibb.co/b7xjLrB/selectbox-arrow.png") right center no-repeat; 
     background-color: #f7eace; 
     color: #444444; 
-    font-size: 12px; 
+    font-size: 11px; 
     line-height: 16px !important; 
     appearance: none; 
     /* this is must */ -webkit-appearance: none; 
