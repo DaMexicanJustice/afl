@@ -171,29 +171,27 @@ fieldset {
 	width:100%;
 	padding-top:130px;
 }
+
+
 /* === Header Section === */
 #header {
 	width:100%;
 	position:fixed;
 	height:130px;
 	background:url(../images/body_bg-purple.png) repeat-x;
-	/*background-color: #663399;
-	outline: 1px vshed #000000;
-	outline-offset: 0px;
-	*/
 	padding-top: 10px;
 	z-index:100;
 }
 
 #header_inn {
-	width:50%;
+	width: 46.25%;
 	position:relative;
 	padding-top:54px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-  /* On screens that are 600px or less, set the background color to olive */
+  
   @media screen and (max-width: 600px) {
 	#header_inn {
 		width: 90%;
@@ -201,7 +199,7 @@ fieldset {
   }
 
 #menu {
-	width: 100%;
+	width: 1200px
 }
 #menu ul li {
 	float:left;
@@ -219,19 +217,21 @@ fieldset {
 	font-weight: normal;
 }
 #top_logo {
-	width:172px;
-	height:178px;
+	max-width:150px;
+	height:138px;
 	position:absolute;
 	top:0px;
 	left:366px;
 }
 #top_logo a {
-	width:172px;
-	height:178px;
+	width:150px;
+	height:138px;
 	display:block;
 	background:url(../images/logo.png) -0px -0px no-repeat;
-}
+} 
+
 /* === Home Section === */
+
 #home_top {
 	width:100%;
 	background:url(../images/portfolio_bg.jpg) repeat;
