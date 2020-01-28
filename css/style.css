@@ -78,6 +78,14 @@
 	color: white !important;
 }
 
+.footer-credit {
+	color: white !important;
+	display: block;
+	text-align: center;
+	margin-top: 30px;
+}
+
+
 
 /* Pirate */
 body {
@@ -456,7 +464,7 @@ fieldset {
 }
 #home_portfolio_botm_bg {
 	width:100%;
-	background:url(../images/portfolio_botm_bg.jpg) bottom center repeat-x;
+	background:url(../images/portfolio_botm_bg_black.jpg) bottom center repeat-x;
 	padding-bottom:50px;
 }
 #home_portfolio_inn {
@@ -1045,7 +1053,7 @@ div.home_blog_post_txt.full_width a {
 }
 #home_contact_botm_bg {
 	width:100%;
-	background:url(../images/home_contact_botm_bg.jpg) bottom center repeat-x;
+	/*background:url(../images/home_contact_botm_bg.jpg) bottom center repeat-x;*/
 	padding-bottom:50px;
 }
 #home_contact_inn {
