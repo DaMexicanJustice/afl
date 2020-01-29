@@ -31,75 +31,9 @@
 	</script>
 <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			*   Examples - images
-			*/
-			$("a#image1").fancybox();			
-			$("a#image2").fancybox();			
-			$("a#image3").fancybox();			
-			$("a#image4").fancybox();			
-			$("a#image5").fancybox();			
-			$("a#image6").fancybox();			
-			$("a#image7").fancybox();			
-			$("a#image8").fancybox();
-			
-			$("a[rel=example_group]").fancybox({
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none',
-				'titlePosition' 	: 'over',
-				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-				}
-			});
-
-			/*
-			*   Examples - various
-			*/
-
-			$("#varioustxt1").fancybox({
-				'titlePosition'		: 'inside',
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none',
-				'modal'		: true
-			});
-			
-			$("#varioustxt2").fancybox({
-				'titlePosition'		: 'inside',
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none'
-			});
-			
-			
-
-			$("#various2").fancybox();
-
-			$("#various3").fancybox({
-				'width'				: '75%',
-				'height'			: '75%',
-				'autoScale'			: false,
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none',
-				'type'				: 'iframe'
-			});
-
-			$("#variousvideo1").fancybox({
-				'padding'			: 0,
-				'autoScale'			: false,
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none'
-			});
-			
-			$("#variousvideo2").fancybox({
-				'padding'			: 0,
-				'autoScale'			: false,
-				'transitionIn'		: 'none',
-				'transitionOut'		: 'none'
-			});
-		});
-	</script>
+<script type="text/javascript" src="js/fancybox.js"></script>
 </head>
+
 <body>
 
 	<div id="fb-root"></div>
@@ -146,7 +80,7 @@
 		<div id="home_top_botm_bg">
 			<div id="home_top_inn">
 				<div id="home_top_logos">
-					<div id="site_title"><a href="#"><img src="images/retro_img.png" alt="#" /></a></div>
+					<div id="site_title"><a href="#"><img id="side_title_image" src="images/retrogames-text.png" alt="#" /></a></div>
 					<p><a href="#">&nbsp;</a></p>
 					<div class="clr"></div>
 				</div>
@@ -323,24 +257,24 @@
 						<p><a href="#quote1" id="image8" title="Sega DreamCast">Sega DreamCast</a></p>
 					</li>	
 					<li data-category="nintendo"> 
-						<a href="#quote1" id="image8" title="Gameboy Advanced (GBA)"><img src="images/gba.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
-						<span><a href="#quote1" id="image8" class="icon_nintendo" title="Gameboy Advanced (GBA)">&nbsp;</a></span>
-						<p><a href="#quote1" id="image8" title="Gameboy Advanced (GBA)">Gameboy Advanced (GBA)</a></p>
+						<a href="#quote1" id="image9" title="Gameboy Advanced (GBA)"><img src="images/gba.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="#quote1" id="image" class="icon_nintendo" title="Gameboy Advanced (GBA)">&nbsp;</a></span>
+						<p><a href="#quote1" id="image9" title="Gameboy Advanced (GBA)">Gameboy Advanced (GBA)</a></p>
 					</li>
 					<li data-category="sega"> 
-						<a href="#quote1" id="image8" title="Sega Genesis"><img src="images/sega_megadrive.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
-						<span><a href="#quote1" id="image8" class="icon_sega" title="Sega Genesis">&nbsp;</a></span>
-						<p><a href="#quote1" id="image8" title="Sega Genesis">Sega Genesis</a></p>
+						<a href="#quote1" id="image10" title="Sega Genesis"><img src="images/sega_megadrive.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="#quote1" id="image10" class="icon_sega" title="Sega Genesis">&nbsp;</a></span>
+						<p><a href="#quote1" id="image10" title="Sega Genesis">Sega Genesis</a></p>
 					</li>
 					<li data-category="sega"> 
-						<a href="#quote1" id="image8" title="Sega Mastersystem"><img src="images/sega_mastersystem.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
-						<span><a href="#quote1" id="image8" class="icon_sega" title="Sega Mastersystem">&nbsp;</a></span>
-						<p><a href="#quote1" id="image8" title="Sega Mastersystem">Sega Mastersystem</a></p>
+						<a href="#quote1" id="image11" title="Sega Mastersystem"><img src="images/sega_mastersystem.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="#quote1" id="image11" class="icon_sega" title="Sega Mastersystem">&nbsp;</a></span>
+						<p><a href="#quote1" id="image11" title="Sega Mastersystem">Sega Mastersystem</a></p>
 					</li>
 					<li class="last_li" data-category="nintendo"> 
-						<a href="#quote1" id="image8" title="Nintendo 64 (N64)"><img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
-						<span><a href="#quote1" id="image8" class="icon_nintendo" title="Nintendo 64 (N64)">&nbsp;</a></span>
-						<p><a href="#quote1" id="image8" title="Nintendo 64 (N64)">Nintendo 64 (N64)</a></p>
+						<a href="#quote1" id="image12" title="Nintendo 64 (N64)"><img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="#quote1" id="image12" class="icon_nintendo" title="Nintendo 64 (N64)">&nbsp;</a></span>
+						<p><a href="#quote1" id="image12" title="Nintendo 64 (N64)">Nintendo 64 (N64)</a></p>
 					</li>					
 				</ul>
 				<div class="clr"></div>
