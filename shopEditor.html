@@ -171,12 +171,13 @@
             </div>
         </div>
 
+
         <!-- Editor Menu above Table -->
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
               <button id="createModal" class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#createProductModal">Opret ny vare</button>
             </form>
-            <input type="text" id="productSearchInput" onkeyup="myFunction()" placeholder="Indtast vare...">
+            <input type="text" id="productSearchInput" onkeyup="myFunction()" placeholder="Søg efter vare...">
           </nav>
 
           <!-- Shop Editor Table -->
@@ -185,7 +186,8 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Vare</th>
-                <th scope="col">Beskrivelse</th>
+                <th scope="col">Kategori</th>
+                <th scope="col">ID</th>
                 <th scope="col">Pris (DKK)</th>
               </tr>
             </thead>
@@ -193,7 +195,29 @@
                 <tr></tr>
             </tbody>
           </table>
-
+          <div id="spinners" class="d-flex justify-content-center">
+            <div class="spinner-grow text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-secondary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-success" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-danger" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-warning" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-info" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
           
       </div>
       <!-- End of Main Content -->
@@ -216,24 +240,48 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="editProductForm">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Vare navn</label>
-                  <input type="text" class="form-control" id="editProductName" aria-describedby="emailHelp" placeholder="Navn...">
+                  <input type="text" class="form-control" id="editProductName" aria-describedby="editProductHelp" placeholder="Navn...">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Vare beskrivelse</label>
-                    <input type="text" class="form-control" id="editProductDescription" aria-describedby="emailHelp" placeholder="Beskrivelse...">
-                  </div>
+                  <label for="exampleInputEmail1">Vare ID</label>
+                  <input type="text" class="form-control" id="editProductID" aria-describedby="editProductHelp" placeholder="ID..." disabled> 
+                </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Vare pris</label>
-                    <input type="text" class="form-control" id="editProductPrice" aria-describedby="emailHelp" placeholder="Pris...">
+                    <input type="text" class="form-control" id="editProductPrice" aria-describedby="editProductHelp" placeholder="Pris...">
                   </div>
-                <button type="submit" class="btn btn-primary">Opdater vare</button>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Vare kategori</label>
+                    <select id="editProductCategory" disabled>
+                      <option value="---">---</option>
+                      <option value="SNES">SNES</option>
+                      <option value="NES">NES</option>
+                      <option value="N64">N64</option>
+                      <option value="WII">Wii</option>
+                      <option value="WIIU">WiiU</option>
+                      <option value="DS">DS</option>
+                      <option value="3DS">3DS</option>
+                      <option value="GAMEBOY">Gameboy</option>
+                      <option value="GBA">GBA</option>
+                      <option value="PS1">PS1</option>
+                      <option value="PS2">PS2</option>
+                      <option value="PS3">PS3</option>
+                      <option value="PS4">PS4</option>
+                      <option value="PSP">PSP</option>
+                      <option value="MEGADRIVE">MegaDrive</option>
+                      <option value="MASTERSYSTEM">MasterSystem</option>
+                      <option value="DREAMCAST">Dreamcast</option>
+                      <option value="XBOX360">Xbox360</option>
+                      </select>
+                  </div>
+                <button type="submit" onclick="updateFirebaseProduct();" class="btn btn-primary">Opdater vare</button>
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Slet</button>
+          <button type="button" onclick="deleteFirebaseProduct();" class="btn btn-danger" data-dismiss="modal">Slet</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
         </div>
       </div>
@@ -251,15 +299,11 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="createProductForm">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Vare navn</label>
                   <input type="text" class="form-control" id="pName" aria-describedby="emailHelp" placeholder="Navn...">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Vare beskrivelse</label>
-                    <input type="text" class="form-control" id="pDesc" aria-describedby="emailHelp" placeholder="Beskrivelse...">
-                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Vare pris</label>
                     <input type="text" class="form-control" id="pPrice" aria-describedby="emailHelp" placeholder="Pris...">
@@ -271,20 +315,21 @@
                         <option value="SNES">SNES</option>
                         <option value="NES">NES</option>
                         <option value="N64">N64</option>
-                        <option value="Wii">Wii</option>
-                        <option value="WiiU">WiiU</option>
+                        <option value="WII">Wii</option>
+                        <option value="WIIU">WiiU</option>
                         <option value="DS">DS</option>
                         <option value="3DS">3DS</option>
-                        <option value="Gameboy">Gameboy</option>
+                        <option value="GAMEBOY">Gameboy</option>
                         <option value="GBA">GBA</option>
                         <option value="PS1">PS1</option>
                         <option value="PS2">PS2</option>
                         <option value="PS3">PS3</option>
+                        <option value="PS4">PS4</option>
                         <option value="PSP">PSP</option>
-                        <option value="MegaDrive">MegaDrive</option>
-                        <option value="MasterSystem">MasterSystem</option>
-                        <option value="Dreamcast">Dreamcast</option>
-                        <option value="Xbox360">Xbox360</option>
+                        <option value="MEGADRIVE">MegaDrive</option>
+                        <option value="MASTERSYSTEM">MasterSystem</option>
+                        <option value="DREAMCAST">Dreamcast</option>
+                        <option value="XBOX360">Xbox360</option>
                       </select>
                   </div>
                   <div class="form-group">
@@ -341,33 +386,12 @@
   <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
 
 
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBMG-wOi-M43KII-za6C8fAO56Jd_Wphc0",
-    authDomain: "vintage-games-dk.firebaseapp.com",
-    databaseURL: "https://vintage-games-dk.firebaseio.com",
-    projectId: "vintage-games-dk",
-    storageBucket: "vintage-games-dk.appspot.com",
-    messagingSenderId: "761347593076",
-    appId: "1:761347593076:web:7e5801b3eb0e94e34ad221",
-    measurementId: "G-2BG2L826ME"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
 <script type="text/javascript" src="js/app.js"></script>
 <script>
     // Are we logged on?
     if (isAuthorized()) {
-        readFirebaseProducts();
+      readProductsIntoTable();
     };
-</script>
-
-<script>
-
 </script>
 
 <script>

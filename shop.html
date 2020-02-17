@@ -39,14 +39,14 @@
 	<div id="header_inn">
 		<div id="menu">
 			<ul id="nav" class="nav">
-				<li><a href="#home_about_botm_bg">Om Butikken</a></li>
-				<li><a href="#home_contact">Kontakt</a></li>
-				<li class="padd"><a href="#home_portfolio">Udvalg</a></li>
-				<li title="Under udvikling!"><a class="disabled" href="#">Nye Varer</a></li>
+				<li><a href="#home_about_botm_bg" class="disabled">Om Butikken</a></li>
+				<li><a href="#home_contact" class="disabled">Kontakt</a></li>
+				<li class="padd"><a href="#home_portfolio" class="disabled">Udvalg</a></li>
+				<li><a href="#" class="disabled">Produkter</a></li>
 			</ul>
 			<div class="clr"></div>
 		</div>
-		<div id="top_logo"> <a href="#home_top" class="scroll">&nbsp;</a>
+		<div id="top_logo"> <a href="./retro.html" class="scroll">&nbsp;</a>
 			<div class="clr"></div>
 		</div>
 		<div class="clr"></div>
@@ -61,48 +61,51 @@
 		<div id="home_portfolio_inn">
 			<div id="portfolio_go_top"> 
 				<div class="clr"></div>
-			</div><!-- end div #portfolio_go_top -->
-			
-        
+			</div>
   <!-- Page Content -->
   <div class="container">
-
     <div class="row">
 
       <div class="col-lg-3">
 
         <img class="my-4 centered" src="images/logo.png">
+        <form action="./retro.html">
+          <input class="btn btn-dark back-btn" type="submit" value="Tilbage Til Forsiden" />
+        </form>
+
         <div class="list-group">
-          <a href="#" class="list-group-item box-shadow-card">Playstation 1</a>
-          <a href="#" class="list-group-item box-shadow-card">Playstation 2</a>
-          <a href="#" class="list-group-item box-shadow-card">Playstation 3</a>
-          <a href="#" class="list-group-item box-shadow-card">Playstation 4</a>
-          <a href="#" class="list-group-item box-shadow-card">PSP</a>
-          <a href="#" class="list-group-item box-shadow-card">SNES</a>
-          <a href="#" class="list-group-item box-shadow-card">NES</a>
-          <a href="#" class="list-group-item box-shadow-card">GameBoyAdvance</a>
-          <a href="#" class="list-group-item box-shadow-card">Gameboy</a>
-          <a href="#" class="list-group-item box-shadow-card">N64</a>
-          <a href="#" class="list-group-item box-shadow-card">DS</a>
-          <a href="#" class="list-group-item box-shadow-card">3DS</a>
-          <a href="#" class="list-group-item box-shadow-card">Wii</a>
-          <a href="#" class="list-group-item box-shadow-card">WiiU</a>
-          <a href="#" class="list-group-item box-shadow-card">Switch</a>
-          <a href="#" class="list-group-item box-shadow-card">Xbox</a>
-          <a href="#" class="list-group-item box-shadow-card">Xbox 360</a>
-          <a href="#" class="list-group-item box-shadow-card">Mastersystem</a>
-          <a href="#" class="list-group-item box-shadow-card">Mega Drive</a>
-          <a href="#" class="list-group-item box-shadow-card">Dreamcast</a>
+          <a onclick='readFirebaseProductsByCategory("PS1"); readNewestProducts("PS1");'; class="list-group-item box-shadow-card">Playstation 1</a>
+          <a onclick='readFirebaseProductsByCategory("PS2"); readNewestProducts("PS2");' class="list-group-item box-shadow-card">Playstation 2</a>
+          <a onclick='readFirebaseProductsByCategory("PS3"); readNewestProducts("PS3");' class="list-group-item box-shadow-card">Playstation 3</a>
+          <a onclick='readFirebaseProductsByCategory("PS4"); readNewestProducts("PS4");' class="list-group-item box-shadow-card">Playstation 4</a>
+          <a onclick='readFirebaseProductsByCategory("PSP"); readNewestProducts("PSP");' class="list-group-item box-shadow-card">PSP</a>
+          <a onclick='readFirebaseProductsByCategory("SNES"); readNewestProducts("SNES");' class="list-group-item box-shadow-card">SNES</a>
+          <a onclick='readFirebaseProductsByCategory("NES"); readNewestProducts("NES");' class="list-group-item box-shadow-card">NES</a>
+          <a onclick='readFirebaseProductsByCategory("GBA"); readNewestProducts("GBA");' class="list-group-item box-shadow-card">GameBoyAdvance</a>
+          <a onclick='readFirebaseProductsByCategory("GAMEBOY"); readNewestProducts("GAMEBOY");' class="list-group-item box-shadow-card">Gameboy</a>
+          <a onclick='readFirebaseProductsByCategory("N64"); readNewestProducts("N64");' class="list-group-item box-shadow-card">N64</a>
+          <a onclick='readFirebaseProductsByCategory("DS"); readNewestProducts("DS");' class="list-group-item box-shadow-card">DS</a>
+          <a onclick='readFirebaseProductsByCategory("3DS"); readNewestProducts("3DS");' class="list-group-item box-shadow-card">3DS</a>
+          <a onclick='readFirebaseProductsByCategory("WII"); readNewestProducts("WII");' class="list-group-item box-shadow-card">Wii</a>
+          <a onclick='readFirebaseProductsByCategory("WIIU"); readNewestProducts("WIIU");' class="list-group-item box-shadow-card">WiiU</a>
+          <a onclick='readFirebaseProductsByCategory("SWITCH"); readNewestProducts("SWITCH");' class="list-group-item box-shadow-card">Switch</a>
+          <a onclick='readFirebaseProductsByCategory("XBOX"); readNewestProducts("XBOX");' class="list-group-item box-shadow-card">Xbox</a>
+          <a onclick='readFirebaseProductsByCategory("XBOX360"); readNewestProducts("XBOX360");' class="list-group-item box-shadow-card">Xbox 360</a>
+          <a onclick='readFirebaseProductsByCategory("MASTERSYSTEM"); readNewestProducts("MASTERSYSTEM");' class="list-group-item box-shadow-card">Mastersystem</a>
+          <a onclick='readFirebaseProductsByCategory("MEGA DRIVE"); readNewestProducts("MEGADRIVE");' class="list-group-item box-shadow-card">Mega Drive</a>
+          <a onclick='readFirebaseProductsByCategory("DREAMCAST"); readNewestProducts("DREAMCAST");' class="list-group-item box-shadow-card">Dreamcast</a>
         </div>
 
       </div>
       <!-- /.col-lg-3 -->
-
+      
       <div class="col-lg-9">
-
+        <h2 id="newForPlatform">NYHEDER</h2> 
         <div id="carouselExampleIndicators" class="carousel slide my-4">
           
-          <div class="carousel-inner" role="listbox">
+          <div id="newestProductsContainer" class="carousel-inner box-shadow-card" role="listbox">
+
+            <!--
             <div class="carousel-item active new-product-element">
               <div alt="First Slide">
                 <img class="centered" src="http://placehold.it/700x400">
@@ -127,7 +130,9 @@
                 <p><span class="badge badge-pill badge-danger">Nyhed!</span></p>
               </div>
             </div>
+          -->
           </div>
+
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -136,100 +141,13 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+
         </div>
 
-        <div class="row">
+        <h2 id="selectedPlatform">VÆLG VENLIGST PLATFORM I MENUEN</h2> 
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">PS1</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">XBOX 360</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">SNES</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">PS1</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">GBA</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 box-shadow-card">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5><span class="badge badge-info">200,-</span></h5>
-              </div>
-              <div class="card-footer">
-                <span class="badge badge-secondary">PSP</span>
-              </div>
-            </div>
-          </div>
-
+        <div id="productContainer" class="row">
+          
         </div>
         <!-- /.row -->
 
@@ -294,7 +212,7 @@
     <p class="m-0 text-center text-white"><span>
       <div id="footer-f">
         <span>
-          &copy;<a class="footer-credit" href="#">%FOOTER%</a>
+          <a class="footer-credit" href="#">%FOOTER%</a>
         </span>
       </div>
     </span></p>
@@ -307,6 +225,24 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript" src="js/footer.js"></script>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
+
+<script type="text/javascript" src="js/app.js"></script>'
+<script>
+  var platform = "PS1";
+  if (location.search != "") {
+    platform = location.search.split("=");
+  } 
+  readNewestProducts(platform[platform.length-1]);
+  readFirebaseProductsByCategory(platform[platform.length-1]);
+</script>
 
 </body>
 </html>

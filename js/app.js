@@ -60,34 +60,92 @@ function writeFirebaseData(id) {
   });
 }
 
-function readFirebaseData(id) {
+function readFirebaseDataIntoEditor(id) {
   // once() method
   firebase.database().ref('pages/texts/'+id).on('value',(snap)=>{
-    console.log(snap.val().text);
-    console.log($("#text"+id));
     document.getElementById("text"+id).value = snap.val().text.charAt(0).toUpperCase() + snap.val().text.slice(1);
   });
 }
 
+function readFirebaseDataIntoLandingPage(id) {
+  console.log("ID: " + id)
+  // once() method
+  firebase.database().ref('pages/texts/'+id).on('value',(snap)=>{
+    if ($("#text"+id+"sub").length > 0) {
+      var splitted = snap.val().text.split("\n");
+      if (splitted.length > 2) {
+        $("#text"+id).text(splitted[0]);
+        $("#text"+id+"sub").text(splitted[splitted.length - 1]);
+        console.log(splitted);
+      } else {
+        $("#text"+id).text(splitted[0]);
+        $("#text"+id+"sub").text(splitted[1]);
+      }
+    } else {
+      $("#text"+id).text(snap.val().text);
+    }
+  });
+}
+
 function createFirebaseProduct() {
-  console.log("Creating new product...");
   var pCategory = $("#pCategory option:selected").val();
   var pName = $("#pName").val();
-  var pDesc = $("#pDesc").val();
   var pPrice = $("#pPrice").val();
   //var pImg = $("#customFile").val();    TODO: HANDLE FILE SELECT, UPLOAD AND GET. FIREBASE STORAGE?
-  console.log(pCategory, pName, pDesc, pPrice)
-  if (pCategory != "" && pName != "" && pDesc != "" && pPrice != "") {
+  console.log(pCategory, pName, pPrice)
+  if (pCategory != "" && pName != "" && pPrice != "") {
     firebase.database().ref('products/'+pCategory).push({
       name: pName,
-      description: pDesc,
-      price: pPrice
+      price: pPrice,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
       //img: pImg
+    }).then( () => {
+      $("#spinners").toggleClass("spinners-hide");
     });
   }
 }
 
-function readFirebaseProducts() {
+function readFirebaseProductsByCategory(category) {
+  $("#selectedPlatform").text(category);
+  $("#productContainer").html("");
+  console.log("Calling", category);
+  // once() method
+  firebase.database().ref('products/'+category).on('value',(snap)=>{
+    $.each(snap.val(), function(id, gameObj) {
+      $("#productContainer").append('<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 box-shadow-card"> <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a><div class="card-body"><h4 class="card-title"><a href="#">'+gameObj.name+'</a></h4><h5><span class="badge badge-info">'+gameObj.price+',-</span></h5></div><div class="card-footer"> <span class="badge badge-secondary">'+category+'</span></div></div></div>');
+    });
+  });
+}
+
+function updateFirebaseProduct() {
+  var pCategory = $("#editProductCategory").val();
+  var pID = $("#editProductID").val();
+  var pName = $("#editProductName").val();
+  var pPrice = $("#editProductPrice").val();
+  firebase.database().ref('products/'+pCategory+'/'+pID).set({
+    name: pName,
+    price: pPrice,
+    createdAt: firebase.database.ServerValue.TIMESTAMP
+  }).then( () => {
+    $("#spinners").toggleClass("spinners-hide");
+  });
+}
+
+function deleteFirebaseProduct() {
+  var pID = $("#editProductID").val();
+  var pCategory = $("#editProductCategory").val();
+  firebase.database().ref('products/'+pCategory+'/'+pID).remove().then( () => {
+    location.reload();
+  });
+}
+
+
+function checkVersionOfWebApp() {
+  console.log(version);
+}
+
+
+function readProductsIntoTable() {
   var tableHeaderScope = 1;
   var tableDataFields = [];
   var idx = 0;
@@ -100,14 +158,24 @@ function readFirebaseProducts() {
         $.each(fields, function(fName, fValue){
           tableDataFields.push(fValue);
         });
-        $('#products tr:last').after('<tr data-toggle="modal" data-target="#editProductModal"> <th scope="row">'+tableHeaderScope+'</th> <td>'+tableDataFields[idx+1]+'</td> <td>'+tableDataFields[idx]+'</td> <td>'+tableDataFields[idx+2]+'</td> </tr>');
+        $('#products tr:last').after('<tr data-toggle="modal" data-target="#editProductModal"> <th scope="row">'+tableHeaderScope+'</th> <td>'+tableDataFields[idx+1]+'</td> <td>'+categoryName+'</td> <td>'+id+'</td> <td>'+tableDataFields[idx+2]+'</td> </tr>');
           tableHeaderScope++; 
           idx += 3;
       });
     });
+    $("#spinners").toggleClass("spinners-hide");
   });
 }
 
-function checkVersionOfWebApp() {
-  console.log(version);
+function readNewestProducts(category, amount=6) {
+  $("#carouselExampleIndicators .carousel-inner").html("");
+  var count = 1;
+  firebase.database().ref("products/"+category).orderByChild("createdAt").limitToLast(amount).on('value', (snap)=> {
+    $.each(snap.val(), function(id, gameObj) {
+      var keyword = count == 1 ? "active" : "";
+      console.log(keyword);
+      $("#carouselExampleIndicators .carousel-inner").eq(0).append('<div class="carousel-item '+keyword+' new-product-element"><div> <img class="centered" src="http://placehold.it/700x400"><h3>'+gameObj.name+'</h3><h5>'+gameObj.price+',-</h5><p><span class="badge badge-pill badge-danger">Nyhed!</span></p></div></div>');
+      count += 1;
+    });
+  });
 }

@@ -1,50 +1,6 @@
 $(document).ready(function() {
 
-    $("a#image1").fancybox({
-
-    });			
-    $("a#image2").fancybox({
-
-    });			
-    $("a#image3").fancybox({
-
-    });			
-    $("a#image4").fancybox({
-
-    });			
-    $("a#image5").fancybox({
-
-    });			
-    $("a#image6").fancybox({
-
-    });			
-    $("a#image7").fancybox({
-
-    });			
-    $("a#image8").fancybox({
-
-    });
-    $("a#image9").fancybox({
-
-    });
-    $("a#image10").fancybox({
-
-    });
-    $("a#image11").fancybox({
-
-    });
-    $("a#image12").fancybox({
-
-    });
-    $("a#image13").fancybox({
-
-    });
-    $("a#image14").fancybox({
-
-    });
-    $("a#image15").fancybox({
-
-    });
+    
     
     /*
     $("a[rel=example_group]").fancybox({

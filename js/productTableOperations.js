@@ -8,7 +8,10 @@ $(document).ready(function() {
             return $(this).text();
         }).get();
         $("#editProductName").val(values[0]);
-        $("#editProductDescription").val(values[1]);
-        $("#editProductPrice").val(values[2]); 
+        $("#editProductID").val(values[2]);
+        $("#editProductPrice").val(values[3]); 
+        // TO DO THIS
+        $("#editProductCategory").val(values[1]);
     });
 });
+

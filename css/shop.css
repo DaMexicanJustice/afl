@@ -13,7 +13,7 @@
 }
 
 .new-product-element {
-    background: #fff;
+    background: white;
     position: relative;
     text-align: center;
     padding: 2%;
@@ -37,4 +37,25 @@ h3 {
 
 .footer-bg {
     background: url(../images/contact_me_bg.jpg) repeat !important;
+}
+
+.back-btn {
+    width: 100%;
+    height: 50px !important;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #f6edd8;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: normal;
+    padding-bottom: 0px;
+    padding-bottom: 2px;
+}
+
+.list-group a:hover {
+    cursor:pointer;
+    transform: scale(1.01);
+    font-weight: bold;
 }

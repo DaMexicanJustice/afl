@@ -191,8 +191,8 @@
             <div class="row">
                 <div class="col">
                     <form class="user" >
-                        <h4>Om Mig Tekst</h4> <textarea id="text2" class="form-control" type="text" rows="4" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(2)" value="Opdater">
+                        <h4>Om Mig Tekst</h4> <textarea id="text2" class="form-control" type="text" rows="5" name="forsideText" placeholder="Skriv her..."></textarea><br>
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(2)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -209,7 +209,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Køb headline</h4> <textarea id="text3" class="form-control" type="text" rows="4" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(3)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(3)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -226,7 +226,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Købsbeskrivelsen</h4> <textarea id="text4" class="form-control" type="text" rows="8" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(4)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(4)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -243,7 +243,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Salg headline</h4> <textarea id="text5" class="form-control" type="text" rows="4" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(5)"  value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(5)" type="submit"  value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -260,7 +260,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Salgsbeskrivelsen</h4> <textarea id="text6" class="form-control" type="text" rows="8" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(6)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(6)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -277,7 +277,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Byt headline</h4> <textarea id="text7" class="form-control" type="text" rows="4" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(7)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(7)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -294,7 +294,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Byt beskrivelsen</h4> <textarea id="text8" class="form-control" type="text" rows="8" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(8)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(8)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -311,7 +311,7 @@
                 <div class="col">
                     <form class="user" >
                         <h4>Udvalgstekst</h4> <textarea id="text9" class="form-control" type="text" rows="4" name="forsideText" placeholder="Skriv her..."></textarea><br>
-                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(9)" value="Opdater">
+                        <input class="btn btn-primary btn-user btn-block" onclick="writeFirebaseData(9)" type="submit" value="Opdater">
                       </form>
                 </div>
                 <div class="col">
@@ -402,7 +402,7 @@
     isAuthorized();
     // Get text for each field
     for (var i = 0; i < 9; i++) {
-      readFirebaseData(i+1);
+      readFirebaseDataIntoEditor(i+1);
     }
 </script>
 
