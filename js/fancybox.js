@@ -36,6 +36,15 @@ $(document).ready(function() {
     $("a#image12").fancybox({
 
     });
+    $("a#image13").fancybox({
+
+    });
+    $("a#image14").fancybox({
+
+    });
+    $("a#image15").fancybox({
+
+    });
     
     /*
     $("a[rel=example_group]").fancybox({

@@ -45,6 +45,8 @@ function isAuthorized() {
   console.log(document.cookie);
   if (!document.cookie.search("vintagegamesdkfirebase@gmail.com")) {
       window.location = "./login.html";
+  } else {
+    return true;
   }
 }
 
@@ -64,6 +66,45 @@ function readFirebaseData(id) {
     console.log(snap.val().text);
     console.log($("#text"+id));
     document.getElementById("text"+id).value = snap.val().text.charAt(0).toUpperCase() + snap.val().text.slice(1);
+  });
+}
+
+function createFirebaseProduct() {
+  console.log("Creating new product...");
+  var pCategory = $("#pCategory option:selected").val();
+  var pName = $("#pName").val();
+  var pDesc = $("#pDesc").val();
+  var pPrice = $("#pPrice").val();
+  //var pImg = $("#customFile").val();    TODO: HANDLE FILE SELECT, UPLOAD AND GET. FIREBASE STORAGE?
+  console.log(pCategory, pName, pDesc, pPrice)
+  if (pCategory != "" && pName != "" && pDesc != "" && pPrice != "") {
+    firebase.database().ref('products/'+pCategory).push({
+      name: pName,
+      description: pDesc,
+      price: pPrice
+      //img: pImg
+    });
+  }
+}
+
+function readFirebaseProducts() {
+  var tableHeaderScope = 1;
+  var tableDataFields = [];
+  var idx = 0;
+  // once() method
+  firebase.database().ref('products').on('value',(snap)=>{
+    // Each category object --> SNES, PS1 etc.
+    $.each(snap.val(), function(categoryName, gamesInCategory) {
+      // Each game object --> Chrono Trigger, Silent Hill etc.
+      $.each(gamesInCategory, function(id, fields){
+        $.each(fields, function(fName, fValue){
+          tableDataFields.push(fValue);
+        });
+        $('#products tr:last').after('<tr data-toggle="modal" data-target="#editProductModal"> <th scope="row">'+tableHeaderScope+'</th> <td>'+tableDataFields[idx+1]+'</td> <td>'+tableDataFields[idx]+'</td> <td>'+tableDataFields[idx+2]+'</td> </tr>');
+          tableHeaderScope++; 
+          idx += 3;
+      });
+    });
   });
 }
 
