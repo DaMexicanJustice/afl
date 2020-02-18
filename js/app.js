@@ -59,6 +59,7 @@ function isAuthorized() {
     console.log("We are authorized", isLoggedOn);
   }).catch(function(error) {
     console.log("We are NOT authorized", error);
+    window.location = "./login.html";
   });
 }
 
