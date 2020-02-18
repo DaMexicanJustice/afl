@@ -35,7 +35,8 @@ function signInWithForm() {
   var userPassword = document.getElementById("loginPwd").value;
   signIn(userEmail, userPassword).then(function(isLoggedOn) {
     console.log(userEmail, userPassword);
-    document.cookie = "email="+userEmail+"; pwd="+userPassword;
+    document.cookie = "email="+userEmail;
+    document.cookie = "pwd="+userPassword;
     //window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password. Prøv igen.");
