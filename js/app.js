@@ -20,7 +20,6 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 
 function signIn(userEmail, userPassword) {
-  console.log(userEmail, userPassword);
   return new Promise(function(resolve, reject) {
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
       //then
@@ -35,7 +34,6 @@ function signInWithForm() {
   var userEmail = document.getElementById("loginEmail").value;
   var userPassword = document.getElementById("loginPwd").value;
   signIn(userEmail, userPassword).then(function(isLoggedOn) {
-    console.log(userEmail, userPassword);
     document.cookie = "email="+userEmail;
     document.cookie = "pwd="+userPassword;
     window.location = "./dashboard.html";
