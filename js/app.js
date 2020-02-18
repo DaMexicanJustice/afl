@@ -1,4 +1,4 @@
-var version = "1.6";
+var version = "1.7";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -77,7 +77,7 @@ function getCookie(credential) {
       
       /* Removing whitespace at the beginning of the cookie name
       and compare it with the given string */
-      if(name == cookiePair[0].trim()) {
+      if(credential == cookiePair[0].trim()) {
           // Decode the cookie value and return
           return decodeURIComponent(cookiePair[1]);
       }
