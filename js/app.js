@@ -26,6 +26,7 @@ function signIn(userEmail, userPassword) {
       resolve(true)
     }).catch(function(error) {
       window.location = "./login.html";
+      reject(false);
     });
   });
 }
@@ -40,7 +41,7 @@ function signInWithForm() {
 }
 
 function signInWithoutForm(userEmail, userPassword) {
-  return signIn(userEmail, userPassword);
+    return signIn(userEmail, userPassword);
 }
 
 function signOut() {
@@ -52,6 +53,8 @@ function signOut() {
 function isAuthorized() {
   signInWithoutForm(checkCookie("email"), checkCookie("pwd")).then(function(isLoggedOn) {
     console.log("We are authorized", isLoggedOn);
+  }).catch(function(error) {
+    console.log("We are NOT authorized", isLoggedOn);
   });
   //return checkCookie("email") != undefined && checkCookie("pwd") != undefined ? true : false; 
 }
