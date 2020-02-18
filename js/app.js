@@ -88,21 +88,26 @@ function readFirebaseDataIntoLandingPage(id) {
 }
 
 function createFirebaseProduct() {
+  // Synchronous
   var pCategory = $("#pCategory option:selected").val();
   var pName = $("#pName").val();
   var pPrice = $("#pPrice").val();
-  //var pImg = $("#customFile").val();    TODO: HANDLE FILE SELECT, UPLOAD AND GET. FIREBASE STORAGE?
-  console.log(pCategory, pName, pPrice)
-  if (pCategory != "" && pName != "" && pPrice != "") {
-    firebase.database().ref('products/'+pCategory).push({
-      name: pName,
-      price: pPrice,
-      createdAt: firebase.database.ServerValue.TIMESTAMP
-      //img: pImg
-    }).then( () => {
-      $("#spinners").toggleClass("spinners-hide");
+  // Asynchronous
+  uploadImageToProductAndGetRefURL().then( function(resolved) {
+    getDownloadURLForProductImage().then(function(urlResponse) {
+      if (pCategory != "" && pName != "" && pPrice != "") {
+        firebase.database().ref('products/'+pCategory).push({
+          name: pName,
+          price: pPrice,
+          createdAt: firebase.database.ServerValue.TIMESTAMP,
+          storageDataRefURL: urlResponse
+        }).then( () => {
+          console.log("...Product Image uploaded and product written to firebase.");
+          location.reload();
+        });
+      }
     });
-  }
+  });
 }
 
 function readFirebaseProductsByCategory(category) {
@@ -132,11 +137,19 @@ function updateFirebaseProduct() {
 }
 
 function deleteFirebaseProduct() {
+  // SYNCHRONOUS
   var pID = $("#editProductID").val();
   var pCategory = $("#editProductCategory").val();
-  firebase.database().ref('products/'+pCategory+'/'+pID).remove().then( () => {
-    location.reload();
-  });
+  var pImageURL = $("#editProductImageURL").val();
+  // ASYNCHRONOUS
+  console.log(pImageURL);
+  var dataRef = firebase.storage().refFromURL(pImageURL);
+  console.log(dataRef);
+  dataRef.delete().then(function () {
+    firebase.database().ref('products/'+pCategory+'/'+pID).remove().then( () => {
+      location.reload();
+    });
+  })
 }
 
 
@@ -147,27 +160,21 @@ function checkVersionOfWebApp() {
 
 function readProductsIntoTable() {
   var tableHeaderScope = 1;
-  var tableDataFields = [];
-  var idx = 0;
   // once() method
   firebase.database().ref('products').on('value',(snap)=>{
     // Each category object --> SNES, PS1 etc.
     $.each(snap.val(), function(categoryName, gamesInCategory) {
       // Each game object --> Chrono Trigger, Silent Hill etc.
-      $.each(gamesInCategory, function(id, fields){
-        $.each(fields, function(fName, fValue){
-          tableDataFields.push(fValue);
-        });
-        $('#products tr:last').after('<tr data-toggle="modal" data-target="#editProductModal"> <th scope="row">'+tableHeaderScope+'</th> <td>'+tableDataFields[idx+1]+'</td> <td>'+categoryName+'</td> <td>'+id+'</td> <td>'+tableDataFields[idx+2]+'</td> </tr>');
+      $.each(gamesInCategory, function(id, gameObj){
+        $('#products tr:last').after('<tr data-toggle="modal" data-target="#editProductModal"> <th scope="row">'+tableHeaderScope+'</th> <td>'+gameObj.name+'</td> <td>'+categoryName+'</td> <td>'+id+'</td> <td>'+gameObj.price+'</td> <td> <img src="'+gameObj.storageDataRefURL+'"> </td> <td style="display: none">'+gameObj.storageDataRefURL+'</td> </tr>');
           tableHeaderScope++; 
-          idx += 3;
       });
     });
     $("#spinners").toggleClass("spinners-hide");
   });
 }
 
-function readNewestProducts(category, amount=6) {
+function readNewestProducts(category="PS1", amount=6) {
   $("#carouselExampleIndicators .carousel-inner").html("");
   var count = 1;
   firebase.database().ref("products/"+category).orderByChild("createdAt").limitToLast(amount).on('value', (snap)=> {
@@ -176,6 +183,49 @@ function readNewestProducts(category, amount=6) {
       console.log(keyword);
       $("#carouselExampleIndicators .carousel-inner").eq(0).append('<div class="carousel-item '+keyword+' new-product-element"><div> <img class="centered" src="http://placehold.it/700x400"><h3>'+gameObj.name+'</h3><h5>'+gameObj.price+',-</h5><p><span class="badge badge-pill badge-danger">Nyhed!</span></p></div></div>');
       count += 1;
+    });
+  });
+}
+
+function uploadImageToProductAndGetRefURL() {
+  // SYNCHRONOUS PROGRESS BAR HANDLER
+  var progressContainer = $("#progressContainer");
+  // SYNCHRONOUS FILE UPLOAD HANDLER
+  var progressBar = $("#uploadProgress");
+  var fPath = $("#customFile").val();
+  var f = $("#customFile").prop("files")[0];
+  var fName = fPath.split('\\').pop();
+  var storageRef = firebase.storage().ref('product_images/'+fName);
+  // ASYNCHRONOUS
+  return new Promise(function (resolve, reject) {
+      var task = storageRef.put(f);
+      task.on('state_changed', function progress(snapshot) {
+      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      progressBar.css('width', percentage+'%');
+    },
+  
+    function error(err) {
+      console.log(err);
+    },
+  
+    function complete() {
+      //code before the pause
+      setTimeout(function(){
+        progressBar.css('width', '0%');
+        progressBar.css('background', 'green');
+        resolve(true);
+      }, 2000);
+    });
+  });
+}
+
+function getDownloadURLForProductImage(imageURL=null) {
+  var fPath = $("#customFile").val();
+  var fName = fPath.split('\\').pop();
+  var dataRef = firebase.storage().ref('product_images/'+fName);
+  return new Promise(function (resolve, reject) {
+    dataRef.getDownloadURL().then(function(url) {
+      resolve(url);
     });
   });
 }

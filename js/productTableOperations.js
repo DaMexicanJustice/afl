@@ -7,11 +7,13 @@ $(document).ready(function() {
         var values = $(this).find('td').map(function() {
             return $(this).text();
         }).get();
+        console.log(values);
         $("#editProductName").val(values[0]);
         $("#editProductID").val(values[2]);
         $("#editProductPrice").val(values[3]); 
         // TO DO THIS
         $("#editProductCategory").val(values[1]);
+        $("#editProductImageURL").val(values[5]);
     });
 });
 

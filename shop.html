@@ -237,7 +237,7 @@
 <script type="text/javascript" src="js/app.js"></script>'
 <script>
   var platform = "PS1";
-  if (location.search != "") {
+  if (location.search.length > 0) {
     platform = location.search.split("=");
   } 
   readNewestProducts(platform[platform.length-1]);

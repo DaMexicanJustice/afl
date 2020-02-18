@@ -170,8 +170,7 @@
               <br>
             </div>
         </div>
-
-
+        
         <!-- Editor Menu above Table -->
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
@@ -189,6 +188,8 @@
                 <th scope="col">Kategori</th>
                 <th scope="col">ID</th>
                 <th scope="col">Pris (DKK)</th>
+                <th scope="col">Billed</th>
+                <th style="display:none" scope="col">URL</th>
               </tr>
             </thead>
             <tbody>
@@ -277,11 +278,14 @@
                       <option value="XBOX360">Xbox360</option>
                       </select>
                   </div>
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" id="editProductImageURL" aria-describedby="editProductHelp" placeholder="Pris...">
+                  </div>
                 <button type="submit" onclick="updateFirebaseProduct();" class="btn btn-primary">Opdater vare</button>
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" onclick="deleteFirebaseProduct();" class="btn btn-danger" data-dismiss="modal">Slet</button>
+          <button type="button" onclick="deleteFirebaseProduct();" class="btn btn-danger">Slet</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Luk</button>
         </div>
       </div>
@@ -334,11 +338,14 @@
                   </div>
                   <div class="form-group">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
+                        <input type="file" class="custom-file-input" id="customFile"> 
                         <label class="custom-file-label" for="customFile">Vælg billed</label>
+                        <div id="progressContainer" class="progress">
+                          <div id="uploadProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                   </div>
-                <button type="submit" onclick="createFirebaseProduct();" class="btn btn-primary">Opret ny vare</button>
+                <button onclick="createFirebaseProduct();" class="btn btn-primary">Opret ny vare</button>
               </form>
         </div>
         <div class="modal-footer">
@@ -384,14 +391,16 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-storage.js"></script>
 
 <script type="text/javascript" src="js/app.js"></script>
+
 <script>
     // Are we logged on?
     if (isAuthorized()) {
       readProductsIntoTable();
     };
+    $("#alertBox").hide();
 </script>
 
 <script>
@@ -416,6 +425,12 @@
         }
       }
     }
+    </script>
+
+    <script>
+      $("button").click(function(event){
+        event.preventDefault();
+      });
     </script>
 
 <script src="js/productTableOperations.js" type="text/javascript"></script>
