@@ -213,9 +213,12 @@
   var platform = "PS1";
   if (location.search.length > 0) {
     platform = location.search.split("=");
-  } 
-  readNewestProducts(platform[platform.length-1]);
-  readFirebaseProductsByCategory(platform[platform.length-1]);
+    readNewestProducts(platform[platform.length-1]);
+    readFirebaseProductsByCategory(platform[platform.length-1]);
+  } else {
+    readNewestProducts(platform);
+    readFirebaseProductsByCategory(platform);
+  }
 </script>
 
 </body>
