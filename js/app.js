@@ -25,7 +25,6 @@ function signIn(userEmail, userPassword) {
       //then
       resolve(true)
     }).catch(function(error) {
-      window.location = "./login.html";
       reject(false);
     });
   });
@@ -37,6 +36,8 @@ function signInWithForm() {
   signIn(userEmail, userPassword).then(function(isLoggedOn) {
     document.cookie = "email="+userEmail+"; pwd="+userPassword;
     window.location = "./dashboard.html";
+  }).catch(function(error) {
+    alert("Forkert brugernavn eller password. Prøv igen.");
   });
 }
 
