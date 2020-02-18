@@ -1,4 +1,4 @@
-var version = "1.3";
+var version = "1.4";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -36,7 +36,7 @@ function signInWithForm() {
   signIn(userEmail, userPassword).then(function(isLoggedOn) {
     console.log(userEmail, userPassword);
     document.cookie = "email="+userEmail+"; pwd="+userPassword;
-    window.location = "./dashboard.html";
+    //window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password. Prøv igen.");
   });
