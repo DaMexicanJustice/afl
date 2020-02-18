@@ -20,24 +20,27 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 
 function signIn(userEmail, userPassword) {
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
-    //then
-    document.cookie = "email="+userEmail+"; pwd="+userPassword;
-    window.location = "./dashboard.html";
-  }).catch(function(error) {
-    alert("Forkert brugernavn eller password");
-    window.location = "./login.html";
+  return new Promise(function(resolve, reject) {
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
+      //then
+      resolve(true)
+    }).catch(function(error) {
+      window.location = "./login.html";
+    });
   });
 }
 
 function signInWithForm() {
   var userEmail = document.getElementById("loginEmail").value;
   var userPassword = document.getElementById("loginPwd").value;
-  signIn(userEmail, userPassword);
+  signIn(userEmail, userPassword).then(function(isLoggedOn) {
+    document.cookie = "email="+userEmail+"; pwd="+userPassword;
+    window.location = "./dashboard.html";
+  });
 }
 
 function signInWithoutForm(userEmail, userPassword) {
-  signIn(userEmail, userPassword);
+  return signIn(userEmail, userPassword);
 }
 
 function signOut() {
@@ -47,7 +50,10 @@ function signOut() {
 }
 
 function isAuthorized() {
-  return checkCookie("email") != "" && checkCookie("pwd") != "" ? true : false; 
+  signInWithoutForm(checkCookie("email"), checkCookie("pwd")).then(function(isLoggedOn) {
+    console.log("We are authorized", isLoggedOn);
+  });
+  //return checkCookie("email") != undefined && checkCookie("pwd") != undefined ? true : false; 
 }
 
 function checkCookie(credential) {
