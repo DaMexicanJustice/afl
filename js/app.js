@@ -1,4 +1,4 @@
-var version = "1.1.a";
+var version = "1.2";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
