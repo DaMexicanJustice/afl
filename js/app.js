@@ -1,4 +1,4 @@
-var version = "1.5";
+var version = "1.6";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -20,6 +20,7 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 
 function signIn(userEmail, userPassword) {
+  console.log(userEmail, userPassword);
   return new Promise(function(resolve, reject) {
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
       //then
