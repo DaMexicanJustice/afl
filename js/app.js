@@ -1,4 +1,4 @@
-var version = "1.2";
+var version = "1.3";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -34,6 +34,7 @@ function signInWithForm() {
   var userEmail = document.getElementById("loginEmail").value;
   var userPassword = document.getElementById("loginPwd").value;
   signIn(userEmail, userPassword).then(function(isLoggedOn) {
+    console.log(userEmail, userPassword);
     document.cookie = "email="+userEmail+"; pwd="+userPassword;
     window.location = "./dashboard.html";
   }).catch(function(error) {
@@ -58,7 +59,6 @@ function isAuthorized() {
     console.log("We are NOT authorized", error);
     window.location = "./login.html";
   });
-  //return checkCookie("email") != undefined && checkCookie("pwd") != undefined ? true : false; 
 }
 
 function checkCookie(credential) {
