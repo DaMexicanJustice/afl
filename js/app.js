@@ -54,7 +54,7 @@ function isAuthorized() {
   signInWithoutForm(checkCookie("email"), checkCookie("pwd")).then(function(isLoggedOn) {
     console.log("We are authorized", isLoggedOn);
   }).catch(function(error) {
-    console.log("We are NOT authorized", isLoggedOn);
+    console.log("We are NOT authorized", error);
   });
   //return checkCookie("email") != undefined && checkCookie("pwd") != undefined ? true : false; 
 }
