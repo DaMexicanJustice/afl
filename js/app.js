@@ -37,7 +37,7 @@ function signInWithForm() {
     console.log(userEmail, userPassword);
     document.cookie = "email="+userEmail;
     document.cookie = "pwd="+userPassword;
-    //window.location = "./dashboard.html";
+    window.location = "./dashboard.html";
   }).catch(function(error) {
     alert("Forkert brugernavn eller password. Prøv igen.");
   });
