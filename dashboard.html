@@ -219,7 +219,11 @@
 
 
 <script type="text/javascript" src="js/app.js"></script>
-<script>isAuthorized();</script>
+<script>
+  if (!isAuthorized()) {
+    window.location("./login.html")
+  };
+</script>
 
 </body>
 

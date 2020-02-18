@@ -396,14 +396,6 @@
 <script type="text/javascript" src="js/app.js"></script>
 
 <script>
-    // Are we logged on?
-    if (isAuthorized()) {
-      readProductsIntoTable();
-    };
-    $("#alertBox").hide();
-</script>
-
-<script>
     function myFunction() {
       // Declare variables
       var input, filter, table, tr, td, i, txtValue;
@@ -434,6 +426,13 @@
     </script>
 
 <script src="js/productTableOperations.js" type="text/javascript"></script>
+
+<script>
+  if (!isAuthorized()) {
+    window.location("./login.html")
+  };
+</script>
+
 </body>
 
 </html>

@@ -22,11 +22,9 @@ var database = firebase.database();
 function signIn() {
   var userEmail = document.getElementById("loginEmail").value;
   var userPassword = document.getElementById("loginPwd").value;
-  console.log(userEmail, userPassword);
   firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).then(function(user) {
     //then
-    console.log(user);
-    document.cookie = "email = "+userEmail;
+    document.cookie = "email="+userEmail+"; mood=Happy";
     console.log(document.cookie);
     window.location = "./dashboard.html";
   }).catch(function(error) {

@@ -398,12 +398,16 @@
 
 <script type="text/javascript" src="js/app.js"></script>
 <script>
-    // Are we logged on?
-    isAuthorized();
     // Get text for each field
     for (var i = 0; i < 9; i++) {
       readFirebaseDataIntoEditor(i+1);
     }
+</script>
+
+<script>
+  if (!isAuthorized()) {
+    window.location("./login.html")
+  };
 </script>
 
 
