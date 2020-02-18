@@ -117,7 +117,7 @@ function readFirebaseProductsByCategory(category) {
   // once() method
   firebase.database().ref('products/'+category).on('value',(snap)=>{
     $.each(snap.val(), function(id, gameObj) {
-      $("#productContainer").append('<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 box-shadow-card"> <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a><div class="card-body"><h4 class="card-title"><a href="#">'+gameObj.name+'</a></h4><h5><span class="badge badge-info">'+gameObj.price+',-</span></h5></div><div class="card-footer"> <span class="badge badge-secondary">'+category+'</span></div></div></div>');
+      $("#productContainer").append('<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 box-shadow-card"> <a href="#"><img class="card-img-top" src="'+gameObj.storageDataRefURL+'" alt=""></a><div class="card-body"><h4 class="card-title"><a href="#">'+gameObj.name+'</a></h4><h5><span class="badge badge-info">'+gameObj.price+',-</span></h5></div><div class="card-footer"> <span class="badge badge-secondary">'+category+'</span></div></div></div>');
     });
   });
 }
@@ -146,10 +146,11 @@ function deleteFirebaseProduct() {
   var dataRef = firebase.storage().refFromURL(pImageURL);
   console.log(dataRef);
   dataRef.delete().then(function () {
-    firebase.database().ref('products/'+pCategory+'/'+pID).remove().then( () => {
-      location.reload();
-    });
-  })
+    
+  });
+  firebase.database().ref('products/'+pCategory+'/'+pID).remove().then( () => {
+    location.reload();
+  });
 }
 
 
@@ -181,7 +182,7 @@ function readNewestProducts(category="PS1", amount=6) {
     $.each(snap.val(), function(id, gameObj) {
       var keyword = count == 1 ? "active" : "";
       console.log(keyword);
-      $("#carouselExampleIndicators .carousel-inner").eq(0).append('<div class="carousel-item '+keyword+' new-product-element"><div> <img class="centered" src="http://placehold.it/700x400"><h3>'+gameObj.name+'</h3><h5>'+gameObj.price+',-</h5><p><span class="badge badge-pill badge-danger">Nyhed!</span></p></div></div>');
+      $("#carouselExampleIndicators .carousel-inner").eq(0).append('<div class="carousel-item '+keyword+' new-product-element"><div> <img class="centered" src="'+gameObj.storageDataRefURL+'"><h3>'+gameObj.name+'</h3><h5>'+gameObj.price+',-</h5><p><span class="badge badge-pill badge-danger">Nyhed!</span></p></div></div>');
       count += 1;
     });
   });

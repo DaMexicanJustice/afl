@@ -1068,10 +1068,10 @@
                 removeClass(this.container, "KICKASShidden");
             }
             getAppContainerElement().appendChild(this.container);
-            var adHTML = this.game.shouldShowAd() ? '<iframe style="background: transparent" src="' + GameGlobals.path('hello.html') + '" class="KICKASSELEMENT" id="kickass-hello-sunshine"></iframe>' : "";
+            var adHTML = this.game.shouldShowAd() ? "" : "";
             this.container.innerHTML = '<div id="kickass-howto-image" class="KICKASSELEMENT kickass-howto-invisible"></div>' + '<div id="kickass-pointstab" class="KICKASSELEMENT">' +
                 adHTML + '<div id="kickass-bomb-menu" class="KICKASSELEMENT KICKASShidden">' + '<ul id="kickass-bomb-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-weapons-menu" class="KICKASSELEMENT KICKASShidden" style="display:none">' + '<ul id="kickass-weapons-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-pointstab-wrapper" class="KICKASSELEMENT">' + '<div id="kickass-points" class="KICKASSELEMENT">' +
-                this.numPoints + '</div>' + '<div id="kickass-esctoquit" class="KICKASSELEMENT">Press esc to quit</div>' +
+                this.numPoints + '</div>' + '<div id="kickass-esctoquit" class="KICKASSELEMENT">Tryk på ESC for at stoppe</div>' +
                 this.getShareHTML() + '</div>' + '<ul id="kickass-pointstab-menu" class="KICKASSELEMENT" ' + (this.game.shouldShowMenu() ? '' : 'style="display:none"') + '>' + '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-highscores" href="#">Submit score</a></li>' + '<li class="KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-menu" href="#">Menu</a></li>' + '<li class="last-li KICKASSELEMENT"><a class="KICKASSELEMENT" id="kickass-link-ships" href="#">Switch ship</a></li>' + '</ul>' + '</div>';
             this.pointsTab = document.getElementById('kickass-pointstab');
             this.pointsTabWrapper = document.getElementById('kickass-pointstab-wrapper');
