@@ -44,9 +44,9 @@ function signInWithoutForm(userEmail, userPassword) {
 }
 
 function signOut() {
-    firebase.auth().signOut().then(function(){
-      authenticate();
-    });
+    document.cookie ="email=";
+    document.cookie ="pwd=";
+    window.location = "./login.html";
 }
 
 function isAuthorized() {
