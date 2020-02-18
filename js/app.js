@@ -50,10 +50,12 @@ function isAuthorized() {
   }
 }
 
+function checkVersionOfWebApp() {
+  console.log(version);
+}
+
 function writeFirebaseData(id) {
-  console.log(id);
   var txt = document.getElementById("text"+id).value;
-  console.log(txt);
   firebase.database().ref('pages/texts/'+id).set({
     text: txt,
     ref: id
@@ -68,7 +70,6 @@ function readFirebaseDataIntoEditor(id) {
 }
 
 function readFirebaseDataIntoLandingPage(id) {
-  console.log("ID: " + id)
   // once() method
   firebase.database().ref('pages/texts/'+id).on('value',(snap)=>{
     if ($("#text"+id+"sub").length > 0) {
@@ -76,7 +77,6 @@ function readFirebaseDataIntoLandingPage(id) {
       if (splitted.length > 2) {
         $("#text"+id).text(splitted[0]);
         $("#text"+id+"sub").text(splitted[splitted.length - 1]);
-        console.log(splitted);
       } else {
         $("#text"+id).text(splitted[0]);
         $("#text"+id+"sub").text(splitted[1]);
@@ -102,7 +102,6 @@ function createFirebaseProduct() {
           createdAt: firebase.database.ServerValue.TIMESTAMP,
           storageDataRefURL: urlResponse
         }).then( () => {
-          console.log("...Product Image uploaded and product written to firebase.");
           location.reload();
         });
       }
@@ -113,7 +112,6 @@ function createFirebaseProduct() {
 function readFirebaseProductsByCategory(category) {
   $("#selectedPlatform").text(category);
   $("#productContainer").html("");
-  console.log("Calling", category);
   // once() method
   firebase.database().ref('products/'+category).on('value',(snap)=>{
     $.each(snap.val(), function(id, gameObj) {
@@ -142,9 +140,7 @@ function deleteFirebaseProduct() {
   var pCategory = $("#editProductCategory").val();
   var pImageURL = $("#editProductImageURL").val();
   // ASYNCHRONOUS
-  console.log(pImageURL);
   var dataRef = firebase.storage().refFromURL(pImageURL);
-  console.log(dataRef);
   dataRef.delete().then(function () {
     
   });
@@ -153,10 +149,6 @@ function deleteFirebaseProduct() {
   });
 }
 
-
-function checkVersionOfWebApp() {
-  console.log(version);
-}
 
 
 function readProductsIntoTable() {
@@ -181,7 +173,6 @@ function readNewestProducts(category="PS1", amount=6) {
   firebase.database().ref("products/"+category).orderByChild("createdAt").limitToLast(amount).on('value', (snap)=> {
     $.each(snap.val(), function(id, gameObj) {
       var keyword = count == 1 ? "active" : "";
-      console.log(keyword);
       $("#carouselExampleIndicators .carousel-inner").eq(0).append('<div class="carousel-item '+keyword+' new-product-element"><div> <img class="centered" src="'+gameObj.storageDataRefURL+'"><h3>'+gameObj.name+'</h3><h5>'+gameObj.price+',-</h5><p><span class="badge badge-pill badge-danger">Nyhed!</span></p></div></div>');
       count += 1;
     });
@@ -206,7 +197,6 @@ function uploadImageToProductAndGetRefURL() {
     },
   
     function error(err) {
-      console.log(err);
     },
   
     function complete() {
