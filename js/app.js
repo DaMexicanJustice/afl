@@ -148,12 +148,18 @@ function createFirebaseProduct() {
 function readFirebaseProductsByCategory(category) {
   $("#selectedPlatform").text(category);
   $("#productContainer").html("");
-  // once() method
-  firebase.database().ref('products/'+category).on('value',(snap)=>{
+  // once()
+  firebase.database().ref('products/'+category).once('value').then(function (snap) {
     $.each(snap.val(), function(id, gameObj) {
       $("#productContainer").append('<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 box-shadow-card"> <a href="#"><img class="card-img-top" src="'+gameObj.storageDataRefURL+'" alt=""></a><div class="card-body"><h4 class="card-title"><a href="#">'+gameObj.name+'</a></h4><h5><span class="badge badge-info">'+gameObj.price+',-</span></h5></div><div class="card-footer"> <span class="badge badge-secondary">'+category+'</span></div></div></div>');
     });
   });
+   /* on() method
+  firebase.database().ref('products/'+category).on('value',(snap)=>{
+    $.each(snap.val(), function(id, gameObj) {
+      $("#productContainer").append('<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100 box-shadow-card"> <a href="#"><img class="card-img-top" src="'+gameObj.storageDataRefURL+'" alt=""></a><div class="card-body"><h4 class="card-title"><a href="#">'+gameObj.name+'</a></h4><h5><span class="badge badge-info">'+gameObj.price+',-</span></h5></div><div class="card-footer"> <span class="badge badge-secondary">'+category+'</span></div></div></div>');
+    });
+  }); */
 }
 
 function updateFirebaseProduct() {
@@ -203,7 +209,7 @@ function readProductsIntoTable() {
   });
 }
 
-function readNewestProducts(category="PS1", amount=6) {
+function readNewestProducts(category="PS1", amount=10) {
   $("#carouselExampleIndicators .carousel-inner").html("");
   var count = 1;
   firebase.database().ref("products/"+category).orderByChild("createdAt").limitToLast(amount).on('value', (snap)=> {
