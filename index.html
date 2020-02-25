@@ -1,20 +1,519 @@
-<!DOCTYPE html>
-<html>
-        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
-        <link href="./style.css" rel="stylesheet" type="text/css">
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
 
-        <script src='dmjcode.js'></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Vintage Games DK</title>
+<meta name="keywords" content="vintage games, vintage, games, dk, Danmark, spil, retro, retrospil, nintendo, sega, playstation, xbox, nes, snes, ps1, ps2, ps3, xbox 360, n64, gameboy, gameboy advance, gameboy advanced, gba, dreamcast, mastersystem, genesis, mega drive, ballerup" />
+<meta name="description" content="HOS VINTAGE GAMES FINDER DU ALT IMELLEM HIMMEL OG JORD I SPIL UNIVERSET." />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<link type="text/css" href="css/style.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/nivo-slider.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-buttons.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css" media="screen" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/fGallery.js"></script>
+<script type="text/javascript" src="js/hover_animation.js"></script>
+<script type="text/javascript">
+		!window.jQuery && document.write('<script src="js/jquery-1.4.3.min.js"><\/script>');
+	</script>
+<script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<script type="text/javascript" src="js/fancybox.js"></script>
+
+</head>
 
 <body>
 
-<!-- <h1>AFL</h1> -->
-<p id='follower'>@FOLLOWER@</p>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v5.0&appId=71334933400&autoLogAppEvents=1"></script>
 
+	
+<!-- BEGIN HEADER  -->
+<div id="header" class="desktop" style="top:0px!important;">
+	<div id="header_inn">
+		<div id="menu">
+			<ul id="nav" class="nav">
+				<li><a href="#home_about_botm_bg">Om Butikken</a></li>
+				<li><a href="#home_contact">Kontakt</a></li>
+				<li class="padd"><a href="#home_portfolio">Udvalg</a></li>
+				<li title="Under udvikling!"><a href="./shop.html">Produkter</a></li>
+			</ul>
+			<div class="clr"></div>
+		</div>
+		<div id="top_logo"> <a href="./index.html" class="scroll">&nbsp;</a>
+			<div class="clr"></div>
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div class="clr"></div>
+</div>
+<!-- END HEADER -->
+
+<!-- BEGIN ASTEROID-->
+<div id="asteroids" title="PRESS TO START">
+	<div class="btnText">
+		<h2>Asteroids</h2>
+		<H4>ESC/F5 - QUIT</H4>
+	</div>
+	<div class="btn">
+		<a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='./js/asteroids.js';void(0);">
+			<i class="fa fa-rocket"></i>
+		</a>
+	</div>
+</div>
+
+<!-- BEGIN HOME SECTION -->
+<div class="wrapper section" id="home_top" data-key="H">
+	<div id="home">
+		<div id="home_top_botm_bg">
+			<div id="home_top_inn">
+				<div id="home_top_logos">
+					<div id="site_title"><a href="#"><img id="side_title_image" src="images/retrogames-text.png" alt="#" /></a></div>
+					<p><a href="#">&nbsp;</a></p>
+					<div class="clr"></div>
+				</div>
+				<div id="home_slider_outer">
+					<div class="slider-wrapper theme-default">
+						<div id="slider" class="nivoSlider">
+							<img src="images/img_slides/slide-2.jpg" alt="#" title="#home_slider_bottom_2" />
+							<img src="images/img_slides/slide-3.jpg" alt="#" title="#home_slider_bottom_3" />
+							<img src="images/img_slides/slide-4.jpg" alt="#" title="#home_slider_bottom_4" />
+						</div><!-- end div #slider -->
+						<div id="htmlcaption" class="nivo-html-caption"> <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. </div>
+						<div class="clr"></div>
+					</div><!-- end div .slider-wrapper theme-default -->
+					
+					<div id="home_slider_bottom_2" class="nivo-html-caption">
+						<h3>BUTIKKEN 1</h3>
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+					</div><!-- end div #home_slider_bottom_2 -->
+					<div id="home_slider_bottom_3" class="nivo-html-caption">
+						<h3>BUTIKKEN 2</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+					</div><!-- end div #home_slider_bottom_3 -->
+					<div id="home_slider_bottom_4" class="nivo-html-caption">
+						<h3>GADEBILLED</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+					</div><!-- end div #home_slider_bottom_4 -->
+					<div class="clr"></div>
+				</div><!-- end div #home_slider_outer -->
+				<div class="clr"></div>
+			</div><!-- end div #home_top_inn -->
+
+			<div id="hello_welcome">
+				<h2 id="text1">...INDLÆSER TEXT...</h2>
+				<h3 id="text1sub"></h3>
+				<div class="clr"></div>
+			</div><!-- end div #hello_welcome -->
+			<div class="clr"></div>
+		</div><!-- end div #home_top_botm_bg -->
+		<div class="clr"></div>
+	</div><!-- end div #home_top -->
+	<div class="clr"></div>
+</div>
+<!-- END HOME SECTION -->
+
+<!-- BEGIN ABOUT SECTION -->
+<div id="home_about"  class="section" data-key="A">
+	<div id="home_about_botm_bg">
+		<div id="home_about_inn">
+			<div id="about_go_top"> <a href="#home_top" class="scroll">&nbsp;</a>
+				<div class="clr"></div>
+			</div><!-- end div #about_go_top -->
+			<div id="home_about_desc">
+				<div id="home_about_desc_left">
+					<h3>OM BUTIKKEN</h3>
+					<div class="clr"></div>
+				</div><!-- end div #home_about_desc_left -->
+				<div id="home_about_desc_right">
+					<p><a href="#"><img src="images/mig.jpg" alt="#" /></a><strong>Daniel</strong> /// <span id="text2">...INDLÆSER TEXT...</span> </p>
+					<div class="clr"></div>
+				</div><!-- end div #home_about_desc_right -->
+				<div class="clr"></div>
+			</div><!-- end div #home_about_desc -->
+			<div id="home_about_listing">
+				<ul>
+					<li>
+						<h2 id="text3">...INDLÆSER TEXT...</h2>
+						<H3 id="text3sub">...INDLÆSER TEXT...</H3>
+						<img src="images/Shopping_Cart_15.png" alt="#" />
+						<div class="about_listing_txt">
+							<p id="text4">...INDLÆSER TEXT...</p>
+							<div class="clr"></div>
+						</div>
+					</li>
+					<li>
+						<h2 id="text5">...INDLÆSER TEXT...</h2>
+						<H3 id="text5sub">...INDLÆSER TEXT...</H3>
+						<img src="images/bag-dollar-512.png" alt="#" />
+						<div class="about_listing_txt">
+							<p id="text6">...INDLÆSER TEXT...</p>
+							<p id="text6sub"></p>
+							<div class="clr"></div>
+						</div>
+					</li>
+					<li>
+						<h2 id="text7">...INDLÆSER TEXT...</h2>
+						<H3 id="text7sub"></H3>
+						<img src="images//industry-line_handshake-512.png" alt="#" />
+						<div class="about_listing_txt">
+							<p id="text8">...INDLÆSER TEXT...</p>
+							<div class="clr"></div>
+						</div>
+					</li>
+				</ul>
+				<div class="clr"></div>
+			</div><!-- end div #home_about_listing -->
+			<div class="clr"></div>
+		</div><!-- end div #home_about_inn -->
+		<div class="clr"></div>
+	</div><!-- end div #home_about_botm_bg -->
+	<div class="clr"></div>
+</div>
+<!-- END ABOUT SECTION -->
+
+<!-- BEGIN PORTFOLIO SECTION -->
+<div id="home_portfolio"  class="section" data-key="P">
+	<div id="home_portfolio_botm_bg">
+		<div id="home_portfolio_inn">
+			<div id="portfolio_go_top"> <a href="#home_top" class="scroll">&nbsp;</a>
+				<div class="clr"></div>
+			</div><!-- end div #portfolio_go_top -->
+			<div id="home_portfolio_desc">
+				<div id="home_portfolio_desc_left">
+					<h3>UDVALG</h3>
+					<div class="clr"></div>
+				</div><!-- end div #home_portfolio_desc_left -->
+				<div id="home_portfolio_desc_right">
+					<p><strong>Om</strong> // <span id="text9">Hos Vintage Games finder du alt mellem himmel og jord i spil universet. Her kan du finde alt fra normale spil, du havde som lille, til de mere obskure og sjældne titler. Udover det kan du også komme ned og sælge dine gamle spil i butikken. :)</span></p>
+					<div class="clr"></div>
+				</div><!-- end div #home_portfolio_desc_right -->
+				<div class="clr"></div>
+			</div><!-- end div #home_portfolio_desc -->
+			<div id="filter_menu" class="filter_container">
+				<label>SORTER:</label>
+				<ul id="filter" class="filter_1">
+					<li><a href="#all">Vis alle</a></li>
+					<li><a href="#sega">Sega</a></li>
+					<li><a href="#nintendo">Nintendo</a></li>
+					<li><a href="#microsoft">Microsoft</a></li>
+					<li><a href="#sony">Sony</a></li>
+				</ul>
+				<div class="clr"></div>
+			</div><!-- end div #filter_menu-->
+			<div id="portfolio_listing">
+				<ul class="projects image-grid_1" id="image-grid">
+					<li data-category="sony"> 
+						<a href="./shop.html?platform=PS1" id="image1" title="PS1"><img src="images/Sony-PlayStation-1.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=PS1" id="image1" class="icon_ps" title="PS1">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PS1" id="image1" title="PS1">Playstation 1</a></p>
+					</li>
+					<li data-category="sony"> 
+						<a href="./shop.html?platform=PS2" id="image2" title="PS2"><img src="images/PlayStation-2.jpg" alt="#" class="attachment-gallery-thumb wp-post-image" /> </a>
+						<span><a href="./shop.html?platform=PS2" id="image2" class="icon_ps" title="PS2">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PS2" id="image2" title="PS2">Playstation 2</a></p>
+					</li>
+					<li data-category="sony"> 
+						<a href="./shop.html?platform=PS3" id="image3" title="PS3"><img src="images/playstation-3.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=PS3" id="image3" class="icon_ps" title="PS3">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PS3" id="image3" title="PS3">Playstation 3</a></p>
+					</li>
+					<li class="last_li" data-category="nintendo"> 
+						<a href="./shop.html?platform=NES" id="image4" title="NES"><img src="images/nes.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=NES" id="image4" class="icon_nintendo" title="NES">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=NES" id="image4" title="NES">Nintendo (NES)</a></p>
+					</li>
+					<li data-category="nintendo"> 
+						<a href="./shop.html?platform=SNES" id="image5" title="SNES"><img src="images/snes.original.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=SNES" id="image5" class="icon_nintendo" title="SNES">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=SNES" id="image5" title="SNES">Super Nintendo (SNES)</a></p>
+					</li>
+					<li data-category="nintendo"> 
+						<a href="./shop.html?platform=GAMEBOY" id="image6" title="Gameboy"><img src="images/gameboy.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=GAMEBOY" id="image6" class="icon_nintendo" title="Gameboy">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=GAMEBOY" id="image6" title="Gameboy">Gameboy</a></p>
+					</li>
+					<li data-category="microsoft"> 
+						<a href="./shop.html?platform=XBOX" id="image7" title="Xbox"><img src="images/xbox.jfif" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=XBOX" id="image7" class="icon_xbox" title="Xbox">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=XBOX" id="image7" title="Xbox">Xbox</a></p>
+					</li>
+					<li data-category="microsoft" class="last_li"> 
+						<a href="./shop.html?platform=XBOX360" id="image7" title="Xbox 360"><img src="images/xbox_360.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=XBOX360" id="image7" class="icon_xbox" title="Xbox 360">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=XBOX360" id="image7" title="Xbox 360">Xbox 360</a></p>
+					</li>
+					<li data-category="microsoft"> 
+						<a href="./shop.html?platform=XBOXONE" id="image7" title="Xbox ONE"><img src="images/xbox one.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=XBOXONE" id="image7" class="icon_xbox" title="Xbox ONE">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=XBOXONE" id="image7" title="Xbox ONE">Xbox ONE</a></p>
+					</li>
+					<li data-category="sega"> 
+						<a href="./shop.html?platform=DREAMCAST" id="image8" title="Sega DreamCast"><img src="images/dreamcast.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=DREAMCAST" id="image8" class="icon_sega" title="Sega DreamCast">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=DREAMCAST" id="image8" title="Sega DreamCast">Sega DreamCast</a></p>
+					</li>	
+					<li data-category="nintendo"> 
+						<a href="./shop.html?platform=GBA" id="image9" title="Gameboy Advanced (GBA)"><img src="images/gba.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=GBA" id="image" class="icon_nintendo" title="Gameboy Advanced (GBA)">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=GBA" id="image9" title="Gameboy Advanced (GBA)">Gameboy Advanced (GBA)</a></p>
+					</li>
+					<li data-category="sega" class="last_li"> 
+						<a href="./shop.html?platform=MEGADRIVE" id="image10" title="MEGA DRIVE"><img src="images/sega_megadrive.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=PS1" id="image10" class="icon_sega" title="MEGA DRIVE">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PS1" id="image10" title="MEGA DRIVE">Sega Mega Drive</a></p>
+					</li>
+					<li data-category="sega"> 
+						<a href="./shop.html?platform=MASTERSYSTEM" id="image11" title="Sega Mastersystem"><img src="images/sega_mastersystem.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=MASTERSYSTEM" id="image11" class="icon_sega" title="Sega Mastersystem">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=MASTERSYSTEM" id="image11" title="Sega Mastersystem">Sega Mastersystem</a></p>
+					</li>
+					<li data-category="sega"> 
+						<a href="./shop.html?platform=MEGACD" id="image11" title="Mega CD"><img src="images/MegaDrive_CD.png" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=MEGACD" id="image11" class="icon_sega" title="Mega CD">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=MEGACD" id="image11" title="Mega CD">Mega CD</a></p>
+					</li>
+					<li data-category="sega"> 
+						<a href="./shop.html?platform=SEGASATURN" id="image11" title="SEGA Saturn"><img src="images/SEGA_SATURN.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=SEGASATURN" id="image11" class="icon_sega" title="SEGA Saturn">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=SEGASATURN" id="image11" title="SEGA Saturn">SEGA Saturn</a></p>
+					</li>
+					<li  class="last_li" data-category="nintendo"> 
+						<a href="./shop.html?platform=N64" id="image12" title="Nintendo 64 (N64)"><img src="images/n64.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=N64" id="image12" class="icon_nintendo" title="Nintendo 64 (N64)">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=N64" id="image12" title="Nintendo 64 (N64)">Nintendo 64 (N64)</a></p>
+					</li>
+					<li  data-category="nintendo"> 
+						<a href="./shop.html?platform=DS" id="image13" title="Nintendo DS"><img src="images/nintedo-ds.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=DS" id="image13" class="icon_nintendo" title="Nintendo DS">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=DS" id="image13" title="Nintendo DS">Nintendo DS</a></p>
+					</li>
+					<li  data-category="nintendo"> 
+						<a href="./shop.html?platform=3DS" id="image14" title="Nintendo 3DS"><img src="images/nintendo-3ds.jfif" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=3DS" id="image14" class="icon_nintendo" title="Nintendo 3DS">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=3DS" id="image14" title="Nintendo 3DS">Nintendo 3DS</a></p>
+					</li>
+					<li  data-category="nintendo"> 
+						<a href="./shop.html?platform=GCN" id="image14" title="Nintendo Gamecube"><img src="images/gamecube.jfif" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=GCN" id="image14" class="icon_nintendo" title="Nintendo Gamecube">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=GCN" id="image14" title="Nintendo Gamecube">Nintendo Gamecube</a></p>
+					</li>
+					<li class="last_li" data-category="sony"> 
+						<a href="./shop.html?platform=PSP" id="image15" title="Sony PSP"><img src="images/sony-psp.jpeg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=PSP" id="image15" class="icon_ps" title="Sony PSP">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PSP" id="image15" title="Sony PSP">Sony PSP</a></p>
+					</li>
+					<li data-category="sony"> 
+						<a href="./shop.html?platform=PS4" id="image15" title="Playstation 4"><img src="images/ps4.jpg" alt="#" class="attachment-gallery-thumb wp-post-image"/></a>
+						<span><a href="./shop.html?platform=PS4" id="image15" class="icon_ps" title="Playstation 4">&nbsp;</a></span>
+						<p><a href="./shop.html?platform=PS4" id="image15" title="Playstation 4">Playstation 4</a></p>
+					</li>
+								
+				</ul>
+				<div class="clr"></div>
+			</div><!-- end div #portfolio_listing -->
+			<div class="clr"></div>
+		</div><!-- end div #home_portfolio_inn -->
+		<div class="clr"></div>
+	</div><!-- end div #home_portfolio_botm_bg -->
+	<div class="clr"></div>
+</div><!-- end div #home_portfolio -->
+
+<!-- BEGIN FANCYBOX TXT CONTENT -->
+<!-- quote1 -->
+<div style="display: none;">
+	<div id="quote1" class="quote">
+		<div class="title_quote">Under udvikling</div>
+		<div class="subtitle_quote">Dette link vil snarest fører til produkter</div>
+		<div class="body_quote">
+			<p>Indtil jeg får selve udvalget oploadet og vist på en præsentabel måde, kan efterspørgsler foretages via email, kontaktform eller telefon. 
+				Du er selvfølgelig mere end velkommen til at kigge forbi butikken!
+			</p>
+		</div>
+	</div><!-- end div ./shop.html?platform=PS1 -->
+</div><!-- end quote1 -->
+<!-- quote2 -->
+<div style="display: none;">
+	<div id="quote2" class="quote">
+		<div class="title_quote">My Poems - VOL. 1</div>
+		<div class="subtitle_quote">Please, read this Poetry.</div>
+		<div class="body_quote"> <img src="images/folio_pic5.jpg" alt="" class="image_quote">
+			<p>The standard Lorem Ipsum passage, used since the 1500s
+				&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;
+				Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC
+				&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;</p>
+		</div>
+	</div><!-- end div #quote2 -->
+</div><!-- end quote2 -->
+
+<!-- quote3 -->
+<div style="display: none;">
+	<div id="quote3" class="quote">
+		<div class="title_quote">Under udvikling</div>
+		<div class="subtitle_quote">Kommer på en senere dato</div>
+		<div class="body_quote"> <img src="images/folio_pic5.jpg" alt="" class="image_quote">
+			<p>Kommer på en senere dato</p>
+		</div>
+	</div><!-- end div #quote3 -->
+</div><!-- end quote3 -->
+<!-- END FANCYBOX TXT CONTENT -->
+<!-- END PORTFOLIO SECTION -->
+
+
+<!-- BEGIN CONTACT SECTION -->
+<div id="home_contact" class="section" data-key="C">
+	<div id="home_contact_botm_bg">
+		<div id="home_contact_inn">
+			<div id="home_contact_go_top"> <a href="#home_top" class="scroll">&nbsp;</a>
+				<div class="clr"></div>
+			</div><!-- end div #home_contact_go_top -->
+			<div id="home_contact_desc">
+				<div id="home_contact_desc_left">
+					<h3>KONTAKT</h3>
+					<div class="clr"></div>
+				</div><!-- end div #home_contact_desc_left -->
+				<div id="home_contact_desc_right">
+					<p><strong>Adresse </strong>// Ahornsvej 3<br />
+						2750, Ballerup, Danmark</p>
+					<p class="phon_no"><strong>Telefon nr</strong>. // (+45) 60 74 76 87</p>
+					<p class="email"><strong>E-Mail</strong> // <a href="mailto:kontakt@vintagegames.dk">kontakt@vintagegames.dk</a></p>
+					<div class="clr"></div>
+				</div><!-- end div #home_contact_desc_right -->
+				<div class="clr"></div>
+			</div><!-- end div #home_contact_desc -->
+			<div id="contact_filelds" class="form-group">
+					<form action="contactform.php" method="post" id="contact_form">
+					<fieldset id="contact_filelds_left">
+					<input id="name" type="text" name="name" value="Dit navn*" />
+					<input id="email" type="text" name="email" value="Din email adresse*" />
+					<select class="custom_box" id="subject" name="subject">
+						<option>Vælg Et Emne</option>
+						<option>Salg af samling</option>
+						<option>Spørgsmål til produkt</option>
+						<option>Andet</option>
+					</select>
+					</fieldset>
+					<fieldset id="contact_filelds_right">
+					<textarea id="message" name="message">Skriv din besked her...*</textarea>
+					<input type="submit" value="" />
+					</fieldset>
+					</form>
+					<div class="clr"></div>
+				<div class="clr"></div>
+			</div><!-- end div #contact_filelds -->
+			<div id="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/Vintage-Games-DK-100867137994708/" class="social_link1">&nbsp;</a></li>
+					<li><a href="https://www.instagram.com/vintage_games_dk/?hl=da" class="social_link10">&nbsp;</a></li>
+					<li><a href="https://www.facebook.com/Vintage-Games-DK-100867137994708/" class="social_link11" disabled>&nbsp;</a></li>
+					<!-- 
+					<li><a href="#" class="social_link1">&nbsp;</a></li>
+					<li><a href="#" class="social_link2">&nbsp;</a></li>
+					<li><a href="#" class="social_link3">&nbsp;</a></li>
+					<li><a href="#" class="social_link4">&nbsp;</a></li>
+					<li><a href="#" class="social_link6">&nbsp;</a></li>
+					<li><a href="#" class="social_link7">&nbsp;</a></li>
+					-->
+				</ul>
+				<div class="fb-like" data-href="https://www.facebook.com/Vintage-Games-DK-100867137994708/" colorscheme="dark" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+				<div class="clr"></div>
+
+				
+			</div><!-- end div #social_links -->
+			<div class="clr"></div>
+			
+		</div><!-- end div #home_contact_inn-->
+		<div class="clr"></div>
+
+		<div id="footer-f">
+			<span>
+				<a class="footer-credit" href="#">%FOOTER%</a>
+			</span>
+		</div>
+
+	</div><!-- end div #home_contact_botm_bg -->
+	
+	<div class="clr"></div>
+
+</div>
+<div class="clr"></div>
+<!-- END CONTACT SECTION -->
+
+<script type="text/javascript">
+            $(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top-139
+                    }, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    */
+                    event.preventDefault();
+                });
+            });
+        </script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".scroll").click(function(event){
+		//prevent the default action for the click event
+		event.preventDefault();
+
+		//get the full url - like mysitecom/index.htm#home
+		var full_url = this.href;
+
+		//split the url by # and get the anchor target name - home in mysitecom/index.htm#home
+		var parts = full_url.split("#");
+		var trgt = parts[1];
+
+		//get the top offset of the target anchor
+		var target_offset = $("#"+trgt).offset();
+		var target_top = target_offset.top;
+
+		//goto that anchor by setting the body scroll top to anchor top
+		$('html, body').animate({scrollTop:target_top}, 500);
+
+		
+	});
+});
+</script>
+
+<script type="text/javascript" src="js/footer.js"></script>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script>
+    // Get text for each field
+    for (var i = 0; i < 9; i++) {
+		readFirebaseDataIntoLandingPage(i+1);
+    }
+</script>
 </body>
 </html>
