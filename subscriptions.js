@@ -1,3 +1,6 @@
+urlCodeParam = getUrlParameter('code');
+console.log(urlCodeParam);
+
 function getUserSubs(oauth) {
     console.log("Getting subs");
     console.log("From function:" + oauth);
@@ -15,7 +18,7 @@ function getUserSubs(oauth) {
   }
   
   var interval = setInterval(function() {
-    getUsersFollows();
+    getUserSubs(urlCodeParam);
   }, 5000);
   
   function getURLParameter(name) {
