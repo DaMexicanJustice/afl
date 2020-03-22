@@ -1,6 +1,3 @@
-urlCodeParam = getUrlParameter('code');
-console.log(urlCodeParam);
-
 function getUserSubs(oauth) {
     console.log("Getting subs");
     console.log("From function:" + oauth);
@@ -20,6 +17,9 @@ function getUserSubs(oauth) {
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
+
+urlCodeParam = getUrlParameter('code');
+console.log(urlCodeParam);
 
 var interval = setInterval(function() {
     getUserSubs(urlCodeParam);
