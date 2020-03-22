@@ -15,13 +15,13 @@ function getUserSubs(oauth) {
         "Accept": "application/vnd.twitchtv.v5+json",
       }
     }
-  }
+}
   
-  var interval = setInterval(function() {
-    getUserSubs(urlCodeParam);
-  }, 5000);
-  
-  function getURLParameter(name) {
+function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-  }
+}
+
+var interval = setInterval(function() {
+    getUserSubs(urlCodeParam);
+}, 5000);
   
