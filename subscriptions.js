@@ -18,7 +18,7 @@ function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
 }
 
-urlCodeParam = getUrlParameter('code');
+urlCodeParam = getURLParameter('code');
 console.log(urlCodeParam);
 
 var interval = setInterval(function() {
