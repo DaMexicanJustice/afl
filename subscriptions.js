@@ -12,6 +12,11 @@ function getUserSubs(oauth) {
         "Accept": "application/vnd.twitchtv.v5+json",
       }
     }
+
+    $.ajax(settings).done(function (response) {
+        console.log(response.data);
+        $('#subscriber').html(response.data[0].from_name);
+      });
 }
   
 function getURLParameter(name) {
