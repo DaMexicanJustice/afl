@@ -53,7 +53,7 @@
 			</ul>
 			<div class="clr"></div>
 		</div>
-		<div id="top_logo"> <a href="./index.html" class="scroll">&nbsp;</a>
+		<div id="top_logo"> <a href="#home_top" class="scroll">&nbsp;</a>
 			<div class="clr"></div>
 		</div>
 		<div class="clr"></div>
@@ -99,15 +99,15 @@
 					<div id="home_slider_bottom_2" class="nivo-html-caption">
 						<h3>BUTIKKEN 1</h3>
 						
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+						<p>Set indefra. Den bagerste ende af butikken med bl.a. figurer.</p>
 					</div><!-- end div #home_slider_bottom_2 -->
 					<div id="home_slider_bottom_3" class="nivo-html-caption">
 						<h3>BUTIKKEN 2</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+						<p>Set indefra. Den forreste del af butikken.</p>
 					</div><!-- end div #home_slider_bottom_3 -->
 					<div id="home_slider_bottom_4" class="nivo-html-caption">
 						<h3>GADEBILLED</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ulabore et dolore magna aliqua.</p>
+						<p>Butiksfront og skilte. Led efter logoet i centrumgaden Ballerup!</p>
 					</div><!-- end div #home_slider_bottom_4 -->
 					<div class="clr"></div>
 				</div><!-- end div #home_slider_outer -->
@@ -390,27 +390,28 @@
 					<p><strong>Adresse </strong>// Ahornsvej 3<br />
 						2750, Ballerup, Danmark</p>
 					<p class="phon_no"><strong>Telefon nr</strong>. // (+45) 60 74 76 87</p>
-					<p class="email"><strong>E-Mail</strong> // <a href="mailto:kontakt@vintagegames.dk">kontakt@vintagegames.dk</a></p>
+					<p class="email"><strong>E-Mail</strong> // <a href="mailto:info@vintagegames.dk">info@vintagegames.dk</a></p>
+					<p style="background: url('./images/opening_hours.png') left top no-repeat;"> <strong>Mandag - fredag</strong> // 10:00 - 18:00</p>
 					<div class="clr"></div>
 				</div><!-- end div #home_contact_desc_right -->
 				<div class="clr"></div>
 			</div><!-- end div #home_contact_desc -->
 			<div id="contact_filelds" class="form-group">
-					<form action="contactform.php" method="post" id="contact_form">
-					<fieldset id="contact_filelds_left">
-					<input id="name" type="text" name="name" value="Dit navn*" />
-					<input id="email" type="text" name="email" value="Din email adresse*" />
-					<select class="custom_box" id="subject" name="subject">
-						<option>Vælg Et Emne</option>
-						<option>Salg af samling</option>
-						<option>Spørgsmål til produkt</option>
-						<option>Andet</option>
-					</select>
-					</fieldset>
-					<fieldset id="contact_filelds_right">
-					<textarea id="message" name="message">Skriv din besked her...*</textarea>
-					<input type="submit" value="" />
-					</fieldset>
+					<form action="contactform.php" method="POST" id="contact_form">
+						<fieldset id="contact_filelds_left">
+							<input id="name" type="text" name="name" value="Dit navn*" />
+							<input id="email" type="text" name="email" value="Din email adresse*" />
+							<select class="custom_box" name="subject">
+								<option value="---">Vælg Et Emne</option>
+								<option value="Salg af Samling">Salg af samling</option>
+								<option value="Spørgsmål til produkt">Spørgsmål til produkt</option>
+								<option value="Andet">Andet</option>
+							</select>
+						</fieldset>
+						<fieldset id="contact_filelds_right">
+							<textarea id="message" name="message">Skriv din besked her...*</textarea>
+							<input type="submit" value="" />
+						</fieldset>
 					</form>
 					<div class="clr"></div>
 				<div class="clr"></div>

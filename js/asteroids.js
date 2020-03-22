@@ -1950,8 +1950,8 @@
         initialize: function(game) {
             this.game = game;
             this.isPlaying = false;
-            this.game.ui.showMessage("Styr med piletasterne: ←↑→↓");
-            this.game.ui.showMessage("Affyr med SPACE");
+            this.game.ui.showMessage("Styr med piletasterne: ←↑→↓", 5);
+            this.game.ui.showMessage("Affyr med SPACE", 5);
         },
         update: function(tdelta) {
             if (this.isPlaying && this.game.bulletManager.enemyIndex.length == 0) {
