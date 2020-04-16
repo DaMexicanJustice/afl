@@ -68,12 +68,48 @@
 
       <div class="col-lg-3">
 
+
+
         <img class="my-4 centered" src="images/logo.png">
         <form action="./index.html">
           <input class="btn btn-dark back-btn" type="submit" value="Tilbage Til Forsiden" />
         </form>
 
-        <div class="list-group">
+        <div class="mobile">
+          <div class="dropdown">
+            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Vælg Kategori
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("PS1"); readNewestProducts("PS1");'; class="dropdown-item">Playstation 1</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("PS2"); readNewestProducts("PS2");' class="dropdown-item">Playstation 2</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("PS3"); readNewestProducts("PS3");' class="dropdown-item">Playstation 3</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("PS4"); readNewestProducts("PS4");' class="dropdown-item">Playstation 4</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("PSP"); readNewestProducts("PSP");' class="dropdown-item">PSP</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("SNES"); readNewestProducts("SNES");' class="dropdown-item">SNES</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("NES"); readNewestProducts("NES");' class="dropdown-item">NES</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("GBA"); readNewestProducts("GBA");' class="dropdown-item">GameBoyAdvance</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("GAMEBOY"); readNewestProducts("GAMEBOY");' class="dropdown-item"">Gameboy</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("N64"); readNewestProducts("N64");' class="dropdown-item"">N64</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("GCN"); readNewestProducts("GCN");' class="dropdown-item"">Gamecube</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("DS"); readNewestProducts("DS");' class="dropdown-item"">DS</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("3DS"); readNewestProducts("3DS");' class="dropdown-item"">3DS</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("WII"); readNewestProducts("WII");' class="dropdown-item"">Wii</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("WIIU"); readNewestProducts("WIIU");' class="dropdown-item"">WiiU</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("SWITCH"); readNewestProducts("SWITCH");' class="dropdown-item"">Switch</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("XBOX"); readNewestProducts("XBOX");' class="dropdown-item"">Xbox</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("XBOX360"); readNewestProducts("XBOX360");' class="dropdown-item"">Xbox 360</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("XBOXONE"); readNewestProducts("XBOXONE");' class="dropdown-item"">Xbox ONE</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("MASTERSYSTEM"); readNewestProducts("MASTERSYSTEM");' class="dropdown-item"">Mastersystem</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("MEGADRIVE"); readNewestProducts("MEGADRIVE");' class="dropdown-item"">Mega Drive</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("MEGACD"); readNewestProducts("MEGACD");' class="dropdown-item"">Mega CD</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("SATURN"); readNewestProducts("SATURN");' class="dropdown-item"">SATURN</a>
+              <a onclick='readFirebaseProductsByCategoryAlphabetically("DREAMCAST"); readNewestProducts("DREAMCAST");' class="dropdown-item"">Dreamcast</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-group desktop">
           <a onclick='readFirebaseProductsByCategoryAlphabetically("PS1"); readNewestProducts("PS1");'; class="list-group-item box-shadow-card">Playstation 1</a>
           <a onclick='readFirebaseProductsByCategoryAlphabetically("PS2"); readNewestProducts("PS2");' class="list-group-item box-shadow-card">Playstation 2</a>
           <a onclick='readFirebaseProductsByCategoryAlphabetically("PS3"); readNewestProducts("PS3");' class="list-group-item box-shadow-card">Playstation 3</a>
