@@ -1,8 +1,8 @@
 @media only screen and (min-width: 300px) and (max-width: 768px) {
-    .mobile {
+    .mobile-menu {
         display: block !important;
     }
-    .desktop {
+    .desktop-menu {
         display: none !important;
     }
 
@@ -34,11 +34,15 @@
     .dropdown-item { 
         font-size: 1.9rem !important; 
     }
+
+    .dropdown-item > :nth-child(even) {
+        
+    }
   }
 
 
   @media only screen and (min-width: 769px) and (max-width: 1920px) {
-	.mobile {
+	.mobile-menu {
         display: none !important;
     }
     .deskptop {
